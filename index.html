@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" wrapper="width=<device-width>, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/css/main.css">
+    <link rel="stylesheet" href="./public/css/text.css">
+    <link rel="stylesheet" href="./public/css/buttons.css">
+    <link rel="stylesheet" href="./public/css/colors.css">
+    <link rel="stylesheet" href="./public/css/image.css">
+    
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap" rel="stylesheet">
+    
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- Luxon -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.5.0/luxon.min.js" integrity="sha512-SN7iwxiJt9nFKiLayg3NjLItXPwRfBr4SQSIugMeBFrD4lIFJe1Z/exkTZYAg3Ul+AfZEGws2PQ+xSoaWfxRQQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+    
+    <!-- MapBox -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css"/>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"/>
+    
+    <!-- FontAwesome -->
+    <!-- <script src="https://kit.fontawesome.com/3a73e56df1.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+      <title>Document</title>
+</head>
+
+<style>
+    .section {
+        display: flex;
+        justify-content: center;
+        padding: 4rem 0;
+    }
+    .section__wrapper {
+        width: 100%;
+        max-width: 60rem;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+    }
+    .section__header {
+        grid-column: span 12;
+        text-align: center;
+        font-size: 5rem;
+        font-family: var(--font-display);
+    }
+    .img {
+        width: 100%;
+        height: auto;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+    /* navbar */
+
+    /* hero */
+    .hero__content {
+        grid-column: 1 / 7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .hero__img {
+        grid-column: 8 / 13;
+    }
+    .hero__buttons {
+        display: flex;
+        gap: 2rem;
+    }
+    .hero__countdown {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .hero__countdown div {
+        background-color: var(--color-tertiary);
+        padding: 2rem;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        border: 2px solid var(--color-primary);
+        box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+        /* font-family: var(--font-body); */
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-secondary);
+        position: relative;
+    }
+    .hero__countdown div::after {
+        content: "";
+        position: absolute;
+        background-color: var(--color-primary);
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        transform: translate(-25%, -25%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+    }
+    .countdown__days::after {
+        content: "days"!important;
+    }
+    .countdown__hours::after {
+        content: "days"!important;
+    }
+    .countdown__minutes::after {
+        content: "min"!important;
+    }
+    .countdown__seconds::after {
+        content: "sec"!important;
+    }
+
+    /* RSVP */
+    .rsvp {
+        background-color: var(--color-primary-light);
+        /* height: 10rem; */
+    }
+
+    /* SCHEDULE */
+    .schedule {
+
+    }
+
+    /* OUR gallery */
+    .gallery {
+        background-color: var(--color-secondary-light);
+    }
+    .gallery .swiper {
+        grid-column: span 12;
+        width: 100%;
+        padding: 4rem 4rem;
+        border: 2px solid var(--color-secondary);
+        background-color: #ddd;
+        border-radius: var(--radius-circle);
+        /* perspective: 1200px; */
+        box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    }
+    .swiper-slide {
+        width: 50%;
+        height: auto;
+        /* max-height: 20rem; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+    }
+    .swiper-slide img {
+        width: 100%;
+        height: auto;
+        /* max-height: 20rem; */
+        object-fit: contain;
+        border-radius: 8px;
+    }
+    .img-text {
+        position: absolute;
+        left: 50%;
+        bottom: 1rem;
+        transform: translateX(-50%);
+        padding: 1rem 2rem;
+        background-color: rgba(0,0,0, 0.75);
+        border-radius: var(--radius-sm);
+        text-align: center;
+    }
+    .gallery__grid {
+        grid-column: span 12;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: auto;
+        gap: 1rem;
+    }
+    .gallery__item {
+
+    }
+    .span--2 {
+        grid-column: span 2;
+    }
+
+    /* LOGISTICS */
+    .logistics {
+
+    }
+    .logistics__text {
+        width: 100%;
+        height: 20rem;
+        border: 1px solid red;
+    }
+    .logistics__content {
+        grid-column: span 12;
+    }
+    .logistics__map {
+        position: relative;
+        width: 100%;
+        height: 30rem;
+    }
+    #coords-box {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 8px 12px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 14px;
+        border-radius: 4px;
+        z-index: 1;
+    }
+    .mapboxgl-popup-content {
+        background-color: white;
+        border-radius: 8px;
+        padding: 10px;
+        font-family: sans-serif;
+        font-size: 14px;
+        color: #333;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup-content {
+        font-weight: bold;
+        color: #0077cc;
+    }
+    .map-icon {
+        font-size: 2rem;
+        color: #e63946;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        /* cursor: pointer; */
+        pointer-events: none;
+    }
+
+    /* .fa-marker i {
+        
+    } */
+
+</style>
+
+<body>
+    
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav__wrapper">
+
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <main class="hero section">
+        <div class="section__wrapper">
+            <div class="hero__content">
+                <div class="txt__display--xl txt--display">Amanda & Jake</div>
+                <div class="txt__display--md">March 29th, 2026</div>
+                <div class="txt__display--sm txt--centered">1234 Street Name,<br> City, ST 11111</div>
+                <div class="hero__buttons">
+                    <a class="btn btn--xl btn--primary btn--outline radius--sm" href="#rsvp">RSVP</a>
+                    <a class="btn btn--xl btn--secondary btn--transparent radius--sm" href="#rsvp">Logistics</a>
+                </div>
+                <div class="hero__countdown">
+                    <div class="countdown__days">154</div>
+                    <div class="countdown__hours">6</div>
+                    <div class="countdown__minutes">45</div>
+                    <div class="countdown__seconds">11</div>
+                </div>
+            </div>
+            <div class="hero__img img">
+                <img src="./public/images/hero-img.jpeg" alt="hero image">
+            </div>
+        </div>
+    </main>
+
+    <section id="rsvp" class="rsvp section">
+        <div class="section__wrapper">
+            <div class="section__header">RSVP</div>
+            <form action="" class="rsvp__form">
+                <div class="input">
+                    <label for="name">Name</label>
+                    <input name="name" type="text">
+                </div>
+                
+                <div class="input__header">RSVP</div>
+
+                <div class="input">
+                    <label for="rsvp-yes">
+                        <input id="rsvp-yes" type="checkbox">
+                        Yes, can't wait!
+                    </label>
+                </div>
+
+                <div class="input">
+                    <label for="rsvp-no">
+                        <input id="rsvp-no" type="checkbox">
+                        Sorry, can't make it.
+                    </label>
+                </div>
+
+                <div class="input">
+                    <label for="rsvp-maybe">
+                        <input id="rsvp-maybe" type="checkbox">
+                        Not sure yet...
+                    </label>
+                </div>
+
+                <div class="input__header">Plus One</div>
+                <div class="input">
+                    <label for="plus-one">
+                        Plus 1
+                        <input id="plus-one" type="checkbox">
+                    </label>
+                </div>
+
+                <div class="input" style="display: none">
+                    <label for="plus-one-name">
+                        Plus 1
+                        <input id="plus-one-name" type="text">
+                    </label>
+                </div>
+
+                <div class="input">
+                    <label for="dinner-main">
+                        Dinner Option For You
+                        <select id="dinner-main" name="dinner-option-main">
+                            <option value="">--Please choose an option--</option>
+                            <option value="chicken">Chicken</option>
+                            <option value="salmon">Salmon</option>
+                            <option value="steak">Steak</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="input">
+                    <label for="dinner-guest">
+                        Dinner Option For Your Guest
+                        <select id="dinner-guest" name="dinner-option-guest">
+                            <option value="">--Please choose an option--</option>
+                            <option value="chicken">Chicken</option>
+                            <option value="salmon">Salmon</option>
+                            <option value="steak">Steak</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="input__header"> Please let us know of any dietary restrictions</div>
+                <div class="input">
+                    <label for="dinner-guest">
+                        You...
+                        <input id="rsvp-restrictions" name="rsvp-restrictions" type="text" />
+                    </label>
+                </div>
+
+                <div class="input">
+                    <label for="dinner-guest">
+                        Guest...
+                        <input id="rsvp-restrictions" name="rsvp-restrictions" type="text" />
+                    </label>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- WEDDING SCHEDULE -->
+    <section class="schedule section">
+        <div class="section__wrapper">
+            <div class="section__header">Wedding Schedule</div>
+            <!-- what time guests should arrive -->
+            <!-- what time the ceremony starts -->
+            <!-- photos & drinks -->
+            <!-- dinner & reception -->
+            <!-- party ends -->
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery section">
+        <div class="section__wrapper">
+            <div class="section__header">Gallery</div>
+            <div class="swiper gallery__swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img class="img--edge-fade" src="./public/images/gallery-1.jpeg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Vegas, 2024</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="img--edge-fade" src="./public/images/gallery-2.jpg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Breckenridge CO, 2025</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="img--edge-fade" src="./public/images/gallery-3.jpeg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Bryce Canyon, 2024</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="img--edge-fade" src="./public/images/gallery-4.jpeg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Luminaria, 2024</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="img--edge-fade" src="./public/images/gallery-5.jpg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Breckenridge CO, 2025</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="img--edge-fade" src="./public/images/gallery-6.jpg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Vegas, 2024</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="img--edge-fade" src="./public/images/gallery-7.jpg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Breckenridge, 2024</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="img--edge-fade" src="./public/images/gallery-8.jpeg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Prescott AZ, 2024</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="img--edge-fade" src="./public/images/gallery-9.jpg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Rollerblading in Orem, 2024</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="img--edge-fade" src="./public/images/gallery-10.jpg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Corn Maze, Orem, 2024</div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".gallery__swiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            loop: true,
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            });
+        </script>
+
+    </section>
+
+    <section class="story section">
+        <div class="section__wrapper">
+            <div class="section__header">Our Story</div>
+            <!-- how we met -->
+            <!-- first date -->
+            <!-- first hike -->
+            <!-- first trip -> bryce -->
+            <!-- *first christmas -->
+            <!-- first anniversary -->
+            <!-- 2nd anniversary -->
+            <!-- engagement -->
+
+            <!-- everything... remove gallery -->
+        </div>
+    </section>
+
+    <section class="logistics section">
+        <div class="section__wrapper">
+            <div class="section__header">Logistics</div>
+            <div class="logistics__content">
+                <div class="logistics__views">   
+                    <button class="btn btn--xl btn--secondary btn--outline radius--sm">Airport</a>             
+                    <button class="btn btn--xl btn--secondary btn--outline radius--sm">Hotel</a>               
+                    <button class="btn btn--xl btn--secondary btn--outline radius--sm">Venue</a>               
+                </div>
+                <div class="logistics__text"></div>
+                <div id="map" class="logistics__map">
+                    <!-- <div id="coords-box">Lng: 0.00, Lat: 0.00</div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="attire section">
+        <div class="section__wrapper">
+            <div class="section__header">Dress Attire</div>
+        </div>
+    </section>
+
+    <section class="registry section">
+        <div class="section__wrapper">
+            <div class="section__header">Registry</div>
+            <!-- gifts are not expected -->
+            <!-- Your presence is present enough, but for those who wish to contribute, we're skipping out of tradition and would love for you to help us create some new experiences instead -->
+            <!-- "We are lucky enough to already have nearly everything we need for this new chapter together! However, for friends and family who have expressed an interest, we have created a gift registry for your convenience here: (link)". -->
+            <!-- venmo account QR code -->
+        </div>
+    </section>
+
+</body>
+
+<script>
+    $(function() {
+
+        // #region - countdown Timer
+        const Luxon = luxon.DateTime;
+        const startTime = Luxon.fromObject({ year: 2026, month: 3, day: 28, hour: 16, minute: 0, second: 0 });
+        
+        var days = $(".countdown__days");
+        var hours = $(".countdown__hours");
+        var minutes = $(".countdown__minutes");
+        var seconds = $(".countdown__seconds");
+
+        function updateCountdown() {
+            const currentTime = Luxon.now();
+            if (currentTime >= startTime) {
+                days.text("0");
+                hours.text("0");
+                minutes.text("0");
+                seconds.text("0");
+                clearInterval(timer);;
+                return;
+            }
+
+            const diff = startTime.diff(currentTime, ["days", "hours", "minutes", "seconds"]).toObject();
+
+            days.text(Math.floor(diff.days));
+            hours.text(Math.floor(diff.hours));
+            minutes.text(Math.floor(diff.minutes));
+            seconds.text(Math.floor(diff.seconds));
+        }
+
+        updateCountdown();
+        const timer = setInterval(updateCountdown, 1000);
+
+        // #endregion
+    
+        // #region - Mapbox
+        mapboxgl.accessToken = 'pk.eyJ1IjoieXVtbXlmdW5ueWJ1bm55IiwiYSI6ImNrODZwNzQydDA1bjEzZW15NTRqa2NpdnEifQ.6y8NFU2qjw6mTgINZYaRyg';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11', // other styles: light-v10, dark-v10, etc.
+            center: [-117.71919, 34.10560], // USA center
+            zoom: 15
+        });
+
+        // Optional: Add navigation controls
+        map.addControl(new mapboxgl.NavigationControl());
+
+        // Optional: Add geocoder search bar
+        // const geocoder = new MapboxGeocoder({
+        //     accessToken: mapboxgl.accessToken,
+        //     mapboxgl: mapboxgl
+        // });
+        // map.addControl(geocoder);
+
+        // Add pin by address using Geocoding API
+        function addMarkerByAddress(address, label = "", icon = "fa-map-pin") {
+            fetch(
+            `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(address)}.json?access_token=${mapboxgl.accessToken}`
+            )
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.features.length > 0) {
+                const [lng, lat] = data.features[0].center;
+
+                // set custom pin
+                const pin = $("<div>").addClass(`map-icon fa-solid ${icon}`).get(0);
+
+                // create marker
+                new mapboxgl.Marker(pin).setLngLat([lng, lat]).addTo(map);
+
+                // add popup
+                if (label) {
+                    const popup = new mapboxgl.Popup({ offset: 20, closeButton: false, closeOnClick: false, }).setHTML(`<div class="popup-content">${label}</div>`).setLngLat([lng, lat]).addTo(map);
+                }
+
+                } else {
+                alert('Address not found');
+                }
+            });
+        }
+
+        // Example: Add pin for New York
+        addMarkerByAddress('555 W Foothill Blvd, Claremont, CA 91711', "Double Tree Hotel", "fa-bed");
+        addMarkerByAddress('2222 International Way, Ontario, CA 91761', "Ontario International Airport", "fa-plane");
+        addMarkerByAddress('343 W 12th St, Claremont, CA 91711', "Wedding Venue", "fa-heart");
+
+
+        const coordsBox = $("#coords-box");
+        map.on('mousemove', (e) => {
+            const lng = e.lngLat.lng.toFixed(5);
+            const lat = e.lngLat.lat.toFixed(5);
+            coordsBox.html(`Lng: ${lng}, Lat: ${lat}`);
+        });
+
+        // #endregion
+    });
+
+</script>
+</html>

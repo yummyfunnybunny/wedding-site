@@ -1,0 +1,25 @@
+:root {
+    /* main colors */
+    --color-primary: #ccd5ae;
+    --color-primary-light: #e9edc9;
+    --color-secondary: #d4a373;
+    --color-secondary-light: #faedcd;
+    --color-tertiary: #fefae0;
+
+    /* alert colors */
+    --color-default: #494f52;
+    --color-success: hsl(134, 61%, 40%);
+    --color-info: hsl(188, 78%, 40%);
+    --color-warning: hsl(45, 100%, 45%);
+    --color-danger: hsl(354, 70%, 50%);
+
+    /* text */
+    --color__text--normal: black;
+    --color__text--invert: white;
+
+    /* backgrounds */
+
+    /* borders */
+
+    /* grays */
+}

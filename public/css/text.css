@@ -1,0 +1,81 @@
+:root {
+    --font-display: "MonteCarlo", cursive;
+    --font-body: sans-serif;
+    --font-highlight: ;
+    font-family: var(--font-body);
+}
+
+/* STYLES */
+.txt--display {
+    font-family: var(--font-display);
+}
+.txt--body {
+    font-family: var(--font-body);
+
+}
+
+/* COLORS */
+.txt__col--primary {
+    color: var(--color-primary);
+}
+.txt__col--secondary {
+    color: var(--color-secondary);
+}
+.txt__col--tertiary {
+    color: var(--color-tertiary);
+}
+.txt__col--normal {
+    color: var(--color__text--normal);
+}
+.txt__col--invert {
+    color: var(--color__text--invert);
+}
+
+/* #region - SIZES */
+
+/* body */
+.txt__body--xs {
+    font-size: 0.5rem;
+}
+.txt__body--sm {
+    font-size: 0.75rem;
+}
+.txt__body--md {
+    font-size: 1rem;
+}
+.txt__body--lg {
+    font-size: 1.25rem;
+}
+.txt__body--xl {
+    font-size: 1.5rem;
+}
+
+/* display */
+.txt__display--xs {
+    font-size: 1.75rem;
+}
+.txt__display--sm {
+    font-size: 2rem;
+}
+.txt__display--md {
+    font-size: 3rem;
+}
+.txt__display--lg {
+    font-size: 4rem;
+}
+.txt__display--xl {
+    font-size: 5rem;
+}
+
+/* #endregion */
+
+/* #region - Alignment */
+.txt--left {
+    text-align: left;
+}
+.txt--centered {
+    text-align: center;
+}
+.text--right {
+    text-align: right;
+}

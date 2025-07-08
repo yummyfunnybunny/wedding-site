@@ -1,0 +1,26 @@
+.img--edge-fade {
+    display: inline-block;
+    position: relative;
+
+    -webkit-mask-image: 
+    linear-gradient(to top, transparent, black 1rem),
+    linear-gradient(to bottom, transparent, black 1rem),
+    linear-gradient(to left, transparent, black 1rem),
+    linear-gradient(to right, transparent, black 1rem);
+
+    -webkit-mask-composite: intersect;
+    mask-composite: intersect;
+
+    mask-image: 
+    linear-gradient(to top, transparent, black 1rem),
+    linear-gradient(to bottom, transparent, black 1rem),
+    linear-gradient(to left, transparent, black 1rem),
+    linear-gradient(to right, transparent, black 1rem);
+
+    mask-composite: intersect;
+
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+}
