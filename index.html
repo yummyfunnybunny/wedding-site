@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./public/css/buttons.css">
     <link rel="stylesheet" href="./public/css/colors.css">
     <link rel="stylesheet" href="./public/css/image.css">
+    <link rel="stylesheet" href="./public/css/form.css">
     
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,6 +41,7 @@
 </head>
 
 <style>
+    /* #region - Globals */
     .section {
         display: flex;
         justify-content: center;
@@ -66,12 +68,11 @@
         width: 100%;
         height: 100%;
     }
-
-
-
-    /* navbar */
-
-    /* hero */
+    /* #endregion */
+    /* #region - Navbar */
+    
+    /* #endregion */
+    /* #region - Hero */
     .hero__content {
         grid-column: 1 / 7;
         display: flex;
@@ -135,19 +136,25 @@
     .countdown__seconds::after {
         content: "sec"!important;
     }
-
-    /* RSVP */
+    /* #endregion */
+    /* #region RSVP */
     .rsvp {
         background-color: var(--color-primary-light);
         /* height: 10rem; */
     }
-
-    /* SCHEDULE */
+    .rsvp__form {
+        /* width: 100%; */
+        min-width: 30rem;
+        grid-column: span 12;
+        justify-self: center;
+    }
+    /* #endregion */
+    /* #region - SCHEDULE */
     .schedule {
 
     }
-
-    /* OUR gallery */
+    /* #endregion */
+    /* #region - Gallery */
     .gallery {
         background-color: var(--color-secondary-light);
     }
@@ -158,13 +165,11 @@
         border: 2px solid var(--color-secondary);
         background-color: #ddd;
         border-radius: var(--radius-circle);
-        /* perspective: 1200px; */
         box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
     }
     .swiper-slide {
         width: 50%;
         height: auto;
-        /* max-height: 20rem; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -174,7 +179,6 @@
     .swiper-slide img {
         width: 100%;
         height: auto;
-        /* max-height: 20rem; */
         object-fit: contain;
         border-radius: 8px;
     }
@@ -202,8 +206,8 @@
     .span--2 {
         grid-column: span 2;
     }
-
-    /* LOGISTICS */
+    /* #endregion */
+    /* #region - Logistics */
     .logistics {
 
     }
@@ -250,13 +254,49 @@
         font-size: 2rem;
         color: #e63946;
         text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-        /* cursor: pointer; */
         pointer-events: none;
     }
+    /* #endregion */
 
-    /* .fa-marker i {
-        
-    } */
+    /* #region - Modal */
+    .modal {
+        /* position: relative; */
+        transition: opacity 0.3s linear;
+    }
+    .modal__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.5);
+        z-index: 100;
+    }
+    .modal__wrapper {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: fit-content;
+        height: fit-content;
+        min-width: 30rem;
+        min-height: 20rem;
+        background-color: white;
+        border-radius: 10px;
+        border: 2px solid black;
+        z-index: 110;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .modal__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        margin: 1rem;
+    }
+    /* #endregion */
 
 </style>
 
@@ -274,7 +314,7 @@
         <div class="section__wrapper">
             <div class="hero__content">
                 <div class="txt__display--xl txt--display">Amanda & Jake</div>
-                <div class="txt__display--md">March 29th, 2026</div>
+                <div class="txt__display--md">March 28th, 2026</div>
                 <div class="txt__display--sm txt--centered">1234 Street Name,<br> City, ST 11111</div>
                 <div class="hero__buttons">
                     <a class="btn btn--xl btn--primary btn--outline radius--sm" href="#rsvp">RSVP</a>
@@ -296,90 +336,91 @@
     <section id="rsvp" class="rsvp section">
         <div class="section__wrapper">
             <div class="section__header">RSVP</div>
-            <form action="" class="rsvp__form">
+            <form id="rsvp-form" class="rsvp__form form">
+                
+                <!-- Name -->
                 <div class="input">
-                    <label for="name">Name</label>
-                    <input name="name" type="text">
+                    <div class="input__header">Name</div>
+                    <input id="name-input" name="name" type="text" required>
                 </div>
                 
-                <div class="input__header">RSVP</div>
-
+                <!-- RSVP -->
                 <div class="input">
-                    <label for="rsvp-yes">
-                        <input id="rsvp-yes" type="checkbox">
-                        Yes, can't wait!
-                    </label>
+                    <div class="input__header">RSVP</div>
+                    <div class="input__group">
+
+                        <label for="rsvp-yes-input">
+                            <input id="rsvp-yes-input" name="rsvp" type="radio" value="yes" required>
+                            Yes, can't wait!
+                        </label>
+                        
+                        <label for="rsvp-no-input">
+                            <input id="rsvp-no-input" name="rsvp" type="radio" value="no">
+                            Sorry, can't make it.
+                        </label>
+                        
+                        <label for="rsvp-maybe-input">
+                            <input id="rsvp-maybe-input" name="rsvp" type="radio" value="maybe">
+                            Not sure yet...
+                        </label>
+                    </div>
                 </div>
 
+                <!-- Dinner Choice -->
                 <div class="input">
-                    <label for="rsvp-no">
-                        <input id="rsvp-no" type="checkbox">
-                        Sorry, can't make it.
-                    </label>
+                    <div class="input__header">Dinner Choice</div>
+                    <select id="dinner-main-input" name="dinner-main" required>
+                        <option value="">--Please choose an option--</option>
+                        <option value="chicken">Chicken</option>
+                        <option value="salmon">Salmon</option>
+                        <option value="steak">Steak</option>
+                    </select>
                 </div>
 
+                <!-- Dietary Restrictions -->
                 <div class="input">
-                    <label for="rsvp-maybe">
-                        <input id="rsvp-maybe" type="checkbox">
-                        Not sure yet...
-                    </label>
+                    <div class="input__header">Dietary Restrictions</div>
+                    <input id="restrictions-main-input" name="rsvp-restrictions" type="text" />
                 </div>
 
-                <div class="input__header">Plus One</div>
+                <!-- Plus One -->
                 <div class="input">
+                    <div class="input__header">Plus One</div>
                     <label for="plus-one">
-                        Plus 1
-                        <input id="plus-one" type="checkbox">
+                        <input id="plus-one-input" type="checkbox">
+                        Yes I am bringing someone!
                     </label>
                 </div>
 
-                <div class="input" style="display: none">
-                    <label for="plus-one-name">
-                        Plus 1
-                        <input id="plus-one-name" type="text">
-                    </label>
+                <!-- Plus One - Name -->
+                <div class="input" style="display: none;">
+                    <div class="input__header">Plus One Name</div>
+                    <input id="plus-one-name-input" type="text" disabled>
                 </div>
 
-                <div class="input">
-                    <label for="dinner-main">
-                        Dinner Option For You
-                        <select id="dinner-main" name="dinner-option-main">
-                            <option value="">--Please choose an option--</option>
-                            <option value="chicken">Chicken</option>
-                            <option value="salmon">Salmon</option>
-                            <option value="steak">Steak</option>
-                        </select>
-                    </label>
+                <!-- Plus One Dinner Choice -->
+                <div class="input" style="display: none;">
+                    <div class="input__header">Dinner Choice (Plus One)</div>
+                    <select id="dinner-guest-input" name="dinner-guest" disabled>
+                        <option value="">--Please choose an option--</option>
+                        <option value="chicken">Chicken</option>
+                        <option value="salmon">Salmon</option>
+                        <option value="steak">Steak</option>
+                    </select>
                 </div>
 
-                <div class="input">
-                    <label for="dinner-guest">
-                        Dinner Option For Your Guest
-                        <select id="dinner-guest" name="dinner-option-guest">
-                            <option value="">--Please choose an option--</option>
-                            <option value="chicken">Chicken</option>
-                            <option value="salmon">Salmon</option>
-                            <option value="steak">Steak</option>
-                        </select>
-                    </label>
+                <!-- Plus One - Dietary Restrictions -->
+                <div class="input" style="display: none;">
+                    <div class="input__header">Dietary Restrictions (Plus One)</div>
+                    <input id="restrictions-guest-input" name="rsvp-restrictions-guest" type="text" disabled />
                 </div>
 
-                <div class="input__header"> Please let us know of any dietary restrictions</div>
-                <div class="input">
-                    <label for="dinner-guest">
-                        You...
-                        <input id="rsvp-restrictions" name="rsvp-restrictions" type="text" />
-                    </label>
-                </div>
+                <!-- FormSubmit -->
+                 <input type="hidden" name="_captcha" value="false">
+                 <input type="hidden" name="_template" value="table">
 
-                <div class="input">
-                    <label for="dinner-guest">
-                        Guest...
-                        <input id="rsvp-restrictions" name="rsvp-restrictions" type="text" />
-                    </label>
-                </div>
-
-                <button type="submit">Submit</button>
+                <!-- Submit -->
+                <button class="btn btn--xl btn--secondary radius--sm" type="submit" style="color: white;">Submit</button>
             </form>
         </div>
     </section>
@@ -403,43 +444,43 @@
             <div class="swiper gallery__swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img class="img--edge-fade" src="./public/images/gallery-1.jpeg" />
+                        <img class="img--edge-fade" src="./public/images/story-1.jpeg" />
                         <div class="img-text txt__body--lg txt__col--primary">Vegas, 2024</div>
                     </div>
                     <div class="swiper-slide">
-                        <img class="img--edge-fade" src="./public/images/gallery-2.jpg" />
+                        <img class="img--edge-fade" src="./public/images/story-2.jpg" />
                         <div class="img-text txt__body--lg txt__col--primary">Breckenridge CO, 2025</div>
                     </div>
                     <div class="swiper-slide">
-                        <img class="img--edge-fade" src="./public/images/gallery-3.jpeg" />
+                        <img class="img--edge-fade" src="./public/images/story-3.jpeg" />
                         <div class="img-text txt__body--lg txt__col--primary">Bryce Canyon, 2024</div>
                     </div>
                     <div class="swiper-slide">
-                        <img class="img--edge-fade" src="./public/images/gallery-4.jpeg" />
+                        <img class="img--edge-fade" src="./public/images/story-4.jpeg" />
                         <div class="img-text txt__body--lg txt__col--primary">Luminaria, 2024</div>
                     </div>
                     <div class="swiper-slide">
-                        <img class="img--edge-fade" src="./public/images/gallery-5.jpg" />
+                        <img class="img--edge-fade" src="./public/images/story-5.jpg" />
                         <div class="img-text txt__body--lg txt__col--primary">Breckenridge CO, 2025</div>
                     </div>
                     <div class="swiper-slide">
-                        <img class="img--edge-fade" src="./public/images/gallery-6.jpg" />
+                        <img class="img--edge-fade" src="./public/images/story-6.jpg" />
                         <div class="img-text txt__body--lg txt__col--primary">Vegas, 2024</div>
                     </div>
                     <div class="swiper-slide">
-                        <img class="img--edge-fade" src="./public/images/gallery-7.jpg" />
+                        <img class="img--edge-fade" src="./public/images/story-7.jpg" />
                         <div class="img-text txt__body--lg txt__col--primary">Breckenridge, 2024</div>
                     </div>
                     <div class="swiper-slide">
-                        <img class="img--edge-fade" src="./public/images/gallery-8.jpeg" />
+                        <img class="img--edge-fade" src="./public/images/story-8.jpeg" />
                         <div class="img-text txt__body--lg txt__col--primary">Prescott AZ, 2024</div>
                     </div>
                     <div class="swiper-slide">
-                        <img class="img--edge-fade" src="./public/images/gallery-9.jpg" />
+                        <img class="img--edge-fade" src="./public/images/story-9.jpg" />
                         <div class="img-text txt__body--lg txt__col--primary">Rollerblading in Orem, 2024</div>
                     </div>
                     <div class="swiper-slide">
-                        <img class="img--edge-fade" src="./public/images/gallery-10.jpg" />
+                        <img class="img--edge-fade" src="./public/images/story-10.jpg" />
                         <div class="img-text txt__body--lg txt__col--primary">Corn Maze, Orem, 2024</div>
                     </div>
                 </div>
@@ -518,6 +559,17 @@
             <!-- venmo account QR code -->
         </div>
     </section>
+
+    <div id="modal" class="modal" style="display: none; opacity: 0;">
+        <div id="modal-overlay" class="modal__overlay"></div>
+        <div class="modal__wrapper">
+            <div class="modal__content">
+                <div class="modal__header section__header">Thank You!</div>
+                <div class="modal__message">We Can't wait to see you on our big day!</div>
+                <button id="close-modal" class="btn modal__btn btn--xl btn--secondary btn--outline radius--sm">Close</button>
+            </div>
+        </div>
+    </div>
 
 </body>
 
@@ -615,6 +667,130 @@
             const lat = e.lngLat.lat.toFixed(5);
             coordsBox.html(`Lng: ${lng}, Lat: ${lat}`);
         });
+
+        // #endregion
+    
+        // #region - Form
+        var form                    = $("#rsvp-form");
+        var nameInput               = $("#name-input");
+        var rsvpYesInput            = $("#rsvp-yes-input");
+        var rsvpNoInput             = $("#rsvp-no-input");
+        var rsvpMaybeInput          = $("#rsvp-maybe-input");
+        var plusOneInput            = $("#plus-one-input");
+        var plusOneNameInput        = $("#plus-one-name-input");
+        var dinnerMainInput         = $("#dinner-main-input");
+        var dinnerGuestInput        = $("#dinner-guest-input");
+        var restrictionsMainInput   = $("#restrictions-main-input");
+        var restrictionsGuestInput  = $("#restrictions-guest-input");
+
+        plusOneInput.on("change", () => {
+            if (plusOneInput.is(":checked")) {
+                plusOneNameInput.parent().css("display", "block");
+                plusOneNameInput.prop("disabled", false);
+                dinnerGuestInput.parent().css('display', "block");
+                dinnerGuestInput.prop('disabled', false);
+                restrictionsGuestInput.parent().css('display', "block");
+                restrictionsGuestInput.prop('disabled', false);
+            } else {
+                plusOneNameInput.parent().css("display", "none");
+                plusOneNameInput.prop("disabled", true);
+                dinnerGuestInput.parent().css('display', "none");
+                dinnerGuestInput.prop('disabled', true);
+                restrictionsGuestInput.parent().css('display', "none");
+                restrictionsGuestInput.prop('disabled', true);
+
+            }
+        });
+
+        var resetForm = function() {
+            // Clear the form
+            form[0].reset();
+            plusOneNameInput.parent().css("display", "none");
+            plusOneNameInput.prop("disabled", true);
+            dinnerGuestInput.parent().css('display', "none");
+            dinnerGuestInput.prop('disabled', true);
+            restrictionsGuestInput.parent().css('display', "none");
+            restrictionsGuestInput.prop('disabled', true);
+
+        }
+
+        form.on("submit", (e) => {
+            e.preventDefault();
+            const formData = new FormData(form[0]);
+            var formResponses = [...formData.entries()];
+            // console.log(formResponses);
+            var rsvpResponse = formResponses[1][1];
+            var modalHeader;
+            var modalMessage;
+            switch(rsvpResponse) {
+                case 'yes':
+                    modalHeader = "Thank you";
+                    modalMessage = "We can't wait to see you on our big day!";
+                    break;
+                case 'no':
+                    modalHeader = "Thank you";
+                    modalMessage = "We're sorry you won't be able to make it. We hope to see you some other time soon!";
+                    break;
+                case 'maybe':
+                    modalHeader = "Thank you";
+                    modalMessage = "We hope you can make it! We'll follow up with you soon.";
+                    break;
+            }
+
+            // setTimeout(() => {
+
+            //     // Show thank you message
+                
+            //     showModal(modalHeader, modalMessage);
+                
+            //     // Clear the form
+            //     resetForm();
+
+            // }, 1000);
+
+            fetch("https://formsubmit.co/yummyfunnybunny13@gmail.com", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+
+                    // Show thank you message
+                    showModal(modalHeader, modalMessage);
+
+                    // Clear the form
+                    resetForm();
+
+                } else if(response.status === 402 || response.status === 429) {
+                    showModal("We're sorry", "we've reached our submission limit for now. Please try again later or fill out our invitation and mail it back to us.");
+                }
+            })
+            .catch(error => {
+                console.error("Formsubmit error:", error);
+                showModal("Oops!", "We're having some technical difficulties! Please try again later or fill out our invitation and mail it back to us.");
+            });
+
+        });
+        // #endregion
+    
+        // #region - Modal
+        var modal = $('#modal');
+
+        var showModal = function(header, message, button = "Close") {
+            $(".modal__header").html(header);
+            $(".modal__message").html(message);
+            $(".modal__button").html(button);
+            modal.css("display", "block").css("opacity", "1");
+        }
+
+        var hideModal = function() {
+            modal.css("opacity", "0").css("display", "none");
+        }
+
+        $("#modal-overlay, #close-modal").on("click", () => {
+            hideModal();
+        });
+
 
         // #endregion
     });
