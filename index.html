@@ -14,6 +14,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
     
     <!-- Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -49,7 +51,7 @@
     }
     .section__wrapper {
         width: 100%;
-        max-width: 60rem;
+        max-width: 70rem;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: 1rem;
@@ -59,6 +61,7 @@
         text-align: center;
         font-size: 5rem;
         font-family: var(--font-display);
+        /* font-weight: bold; */
     }
     .img {
         width: 100%;
@@ -73,73 +76,149 @@
     
     /* #endregion */
     /* #region - Hero */
+    .hero {
+        position: relative;
+        padding: 0;
+        min-height: 90vh;
+    }
+    .hero__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-cream);
+        /* background-image: url("public/images/zion-bg.jpg"); */
+        /* background-size: cover; */
+        /* background-position: right; */
+        /* filter: grayscale(100%); */
+        z-index: -10;
+    }
+    .hero__bg .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0);
+    }
+    .hero__wrapper {
+        align-items: center;
+    }
     .hero__content {
-        grid-column: 1 / 7;
+        grid-column: 1 / 8;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 1rem;
+        gap: 2rem;
+        background-color: var(--color-primary-transparant);
+        padding: 1rem;
+        border: 2px solid var(--color-secondary-dark);
+        color: var(--color-secondary-dark);
+    }
+    .hero__img-container {
+        grid-column: 9 / 13;
+        display: flex;
+        justify-content: center;
     }
     .hero__img {
-        grid-column: 8 / 13;
+        border: 2px solid var(--color-secondary-dark);
+        width: 20rem;
+        position: relative;
     }
+    .hero__img::before,
+    .hero__img::after {
+        position: absolute;
+        content: "";
+        width: 5rem;
+        height: 5rem;
+        border: 2px solid var(--color-secondary-dark);
+        background-color: var(--color-primary-transparant);
+        z-index: -10;
+    }
+    .hero__img::before {
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+    .hero__img::after {
+        bottom: 0;
+        right: 0;
+        transform: translate(50%, 50%);
+    }
+
     .hero__buttons {
         display: flex;
         gap: 2rem;
     }
-    .hero__countdown {
+    /* #endregion */
+    /* #region - Countdown */
+    .countdown {
+        background-color: var(--color-primary);
+    }
+    .countdown__wrapper .section__header {
+        color: var(--color-secondary-dark);
+    }
+    .countdown__container {
+        position: relative;
+        grid-column: span 12;
         width: 100%;
         display: flex;
-        justify-content: space-between;
-    }
-    .hero__countdown div {
-        background-color: var(--color-tertiary);
-        padding: 2rem;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        border: 2px solid var(--color-primary);
-        box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
-        /* font-family: var(--font-body); */
-        font-size: 1.5rem;
-        display: flex;
         justify-content: center;
-        align-items: center;
-        color: var(--color-secondary);
-        position: relative;
+        gap: 4rem;
+        padding-top: 1rem;
     }
-    .hero__countdown div::after {
+    .countdown__container::before {
         content: "";
         position: absolute;
-        background-color: var(--color-primary);
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
+        width: 100%;
+        height: 4px;
         top: 0;
-        left: 0;
-        transform: translate(-25%, -25%);
+        background-color: var(--color-secondary-dark);
+        /* margin: 1rem; */
+    }
+    .countdown__container div {
+        /* background-color: var(--color-tertiary); */
+        padding: 1rem;
+        font-size: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-secondary-dark);
+        position: relative;
+    }
+    .countdown__container div::before {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .countdown__container div::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 2rem);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
     .countdown__days::after {
         content: "days"!important;
     }
     .countdown__hours::after {
-        content: "days"!important;
+        content: "hours"!important;
     }
     .countdown__minutes::after {
-        content: "min"!important;
+        content: "minutes"!important;
     }
     .countdown__seconds::after {
-        content: "sec"!important;
+        content: "seconds"!important;
     }
     /* #endregion */
     /* #region RSVP */
     .rsvp {
-        background-color: var(--color-primary-light);
+        /* background-color: var(--color-primary-light); */
         /* height: 10rem; */
     }
     .rsvp__form {
@@ -151,12 +230,31 @@
     /* #endregion */
     /* #region - SCHEDULE */
     .schedule {
-
+        background-color: var(--color-4);
+        color: var(--color-secondary);
+    }
+    .schedule__content {
+        grid-column: span 12;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+    .schedule__img {
+        grid-column: span 4;
+        grid-row: 1;
+    }
+    .schedule__text {
+        justify-self: center;
+        grid-column: span 4;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
     /* #endregion */
     /* #region - Gallery */
     .gallery {
-        background-color: var(--color-secondary-light);
+        /* background-color: var(--color-secondary-light); */
     }
     .gallery .swiper {
         grid-column: span 12;
@@ -303,35 +401,53 @@
 <body>
     
     <!-- NAVBAR -->
-    <nav class="navbar">
+    <!-- <nav class="navbar">
         <div class="nav__wrapper">
 
         </div>
-    </nav>
+    </nav> -->
 
     <!-- HERO -->
     <main class="hero section">
-        <div class="section__wrapper">
+        <div class="hero__bg">
+            <div class="overlay"></div>
+        </div>
+        <div class="hero__wrapper section__wrapper">
             <div class="hero__content">
                 <div class="txt__display--xl txt--display">Amanda & Jake</div>
                 <div class="txt__display--md">March 28th, 2026</div>
                 <div class="txt__display--sm txt--centered">1234 Street Name,<br> City, ST 11111</div>
                 <div class="hero__buttons">
-                    <a class="btn btn--xl btn--primary btn--outline radius--sm" href="#rsvp">RSVP</a>
-                    <a class="btn btn--xl btn--secondary btn--transparent radius--sm" href="#rsvp">Logistics</a>
+                    <a class="btn btn--xl btn--secondary btn--outline radius--sm" href="#rsvp">RSVP</a>
+                    <a class="btn btn--xl btn--secondary btn--outline radius--sm" href="#rsvp">Logistics</a>
                 </div>
-                <div class="hero__countdown">
+                <!-- <div class="hero__countdown">
                     <div class="countdown__days">154</div>
                     <div class="countdown__hours">6</div>
                     <div class="countdown__minutes">45</div>
                     <div class="countdown__seconds">11</div>
-                </div>
+                </div> -->
             </div>
-            <div class="hero__img img">
-                <img src="./public/images/hero-img.jpeg" alt="hero image">
+            <div class="hero__img-container">
+                <div class="hero__img img">
+                    <img src="./public/images/hero-img.jpeg" alt="hero image">
+                </div>
             </div>
         </div>
     </main>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown section">
+        <div class="countdown__wrapper section__wrapper">
+            <div class="section__header">Coming Soon</div>
+            <div class="countdown__container">
+                <div class="countdown__days">154</div>
+                <div class="countdown__hours">6</div>
+                <div class="countdown__minutes">45</div>
+                <div class="countdown__seconds">11</div>
+            </div>
+        </div>
+    </section>
 
     <section id="rsvp" class="rsvp section">
         <div class="section__wrapper">
@@ -429,6 +545,17 @@
     <section class="schedule section">
         <div class="section__wrapper">
             <div class="section__header">Wedding Schedule</div>
+            <div class="schedule__content">
+                <div class="schedule__img"></div>
+                <div class="schedule__text">
+                    <div>4:00pm - Arrival</div>
+                    <div>4:30pm - Ceremony</div>
+                    <div>5:00pm - Photos & Drinks</div>
+                    <div>5:30 - Dinner & Reception</div>
+                    <div>9:00pm - Reception Ends</div>
+                </div>
+                <div class="schedule__img"></div>
+            </div>
             <!-- what time guests should arrive -->
             <!-- what time the ceremony starts -->
             <!-- photos & drinks -->

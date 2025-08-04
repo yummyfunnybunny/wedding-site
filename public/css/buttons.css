@@ -57,7 +57,7 @@
     --btn-color: var(--color-primary);
 }
 .btn--secondary {
-    --btn-color: var(--color-secondary);
+    --btn-color: var(--color-secondary-dark);
 }
 .btn--tertiary {
     --btn-color: var(--color-tertiary);

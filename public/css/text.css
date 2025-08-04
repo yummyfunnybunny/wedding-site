@@ -1,6 +1,8 @@
 :root {
-    --font-display: "MonteCarlo", cursive;
-    --font-body: sans-serif;
+    /* --font-display: "MonteCarlo", cursive; */
+    --font-display: "Tangerine", cursive;
+    /* --font-body: sans-serif; */
+    --font-body: "Cormorant Garamond", serif;
     --font-highlight: ;
     font-family: var(--font-body);
 }
