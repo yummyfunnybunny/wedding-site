@@ -1,14 +1,14 @@
 :root {
     /* main colors */
-    --color-primary: #AEC8A4;
-    --color-primary-transparant: rgba(174, 200, 164, 0.85);
-    --color-primary-dark: hsl(103, 25%, 35%);
-    --color-primary-dark-transparant: rgba(80, 112, 67, 0.85);
+    --color-primary: #384436;
+    /* --color-primary-transparant: rgba(174, 200, 164, 0.85); */
+    /* --color-primary-dark: hsl(103, 25%, 35%); */
+    /* --color-primary-dark-transparant: rgba(80, 112, 67, 0.85); */
 
-    --color-secondary: #FFBF78;
-    --color-secondary-dark: hsl(32, 100%, 35%);
+    --color-secondary: #9d6331;
+    /* --color-secondary-dark: hsl(32, 100%, 35%); */
 
-    --color-cream: #FFFDF6;
+    --color-cream: #fcf6ea;
 
     /* alert colors */
     --color-default: #494f52;

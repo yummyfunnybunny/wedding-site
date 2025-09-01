@@ -73,7 +73,21 @@
     }
     /* #endregion */
     /* #region - Navbar */
-    
+    .nav {
+        position: absolute;
+        width: 100%;
+
+    }
+    .nav__links {
+        display:  flex;
+        grid-column: span 12;
+        justify-content: space-between;
+        
+    }
+    .nav__links a {
+        color: var(--color-cream);
+        text-decoration: none;
+    }
     /* #endregion */
     /* #region - Hero */
     .hero {
@@ -85,11 +99,11 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: var(--color-cream);
-        /* background-image: url("public/images/zion-bg.jpg"); */
-        /* background-size: cover; */
-        /* background-position: right; */
-        /* filter: grayscale(100%); */
+        /* background-color: var(--color-cream); */
+        background-image: url("public/images/zion-bg.jpg");
+        background-size: cover;
+        background-position: right;
+        filter: grayscale(100%);
         z-index: -10;
     }
     .hero__bg .overlay {
@@ -97,11 +111,25 @@
         height: 100%;
         background-color: rgba(0,0,0,0);
     }
-    .hero__wrapper {
+    /* #endregion */
+    /* #region - CTA */
+    .cta {
+        position: relative;
+        padding: 0;
+        min-height: 90vh;
+        background-color: var(--color-cream);
+    }
+    .cta__wrapper {
         align-items: center;
     }
-    .hero__content {
-        grid-column: 1 / 8;
+    
+    .cta__img-container {
+        grid-column: 1 / 5;
+        display: flex;
+        justify-content: center;
+    }
+    .cta__content {
+        grid-column: 6 / 13;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -112,38 +140,36 @@
         border: 2px solid var(--color-secondary-dark);
         color: var(--color-secondary-dark);
     }
-    .hero__img-container {
-        grid-column: 9 / 13;
-        display: flex;
-        justify-content: center;
-    }
-    .hero__img {
-        border: 2px solid var(--color-secondary-dark);
-        width: 20rem;
+    .cta__img {
+        padding: 2rem;
+        border: 4px solid var(--color-primary);
+        width: 25rem;
         position: relative;
+        z-index: 10;
     }
-    .hero__img::before,
-    .hero__img::after {
+    .cta__img::before {
         position: absolute;
         content: "";
-        width: 5rem;
-        height: 5rem;
-        border: 2px solid var(--color-secondary-dark);
-        background-color: var(--color-primary-transparant);
-        z-index: -10;
-    }
-    .hero__img::before {
-        top: 0;
-        left: 0;
+        top: 50%;
+        left: 50%;
+        width: 115%;
+        height: 115%;
+        border: 4px solid var(--color-primary);
         transform: translate(-50%, -50%);
+        z-index: -1;
     }
-    .hero__img::after {
+    .cta__img::before {
+        /* top: 0; */
+        /* left: 0; */
+        /* transform: translate(-50%, -50%); */
+    }
+    /* .cta__img::after {
         bottom: 0;
         right: 0;
         transform: translate(50%, 50%);
-    }
+    } */
 
-    .hero__buttons {
+    .cta__buttons {
         display: flex;
         gap: 2rem;
     }
@@ -401,41 +427,46 @@
 <body>
     
     <!-- NAVBAR -->
-    <!-- <nav class="navbar">
-        <div class="nav__wrapper">
-
+    <nav id="navbar" class="nav section">
+        <div class="nav__wrapper section__wrapper">
+            <div class="nav__links">
+                <a href="#rsvp">RSVP</a>
+                <a href="#rsvp">Details</a>
+                <a href="#rsvp">Schedule</a>
+                <a href="#logistics">Logistics</a>
+                <a href="#rsvp">Gallery</a>
+            </div>
         </div>
-    </nav> -->
+    </nav>
 
     <!-- HERO -->
     <main class="hero section">
         <div class="hero__bg">
             <div class="overlay"></div>
         </div>
-        <div class="hero__wrapper section__wrapper">
-            <div class="hero__content">
-                <div class="txt__display--xl txt--display">Amanda & Jake</div>
-                <div class="txt__display--md">March 28th, 2026</div>
-                <div class="txt__display--sm txt--centered">1234 Street Name,<br> City, ST 11111</div>
-                <div class="hero__buttons">
-                    <a class="btn btn--xl btn--secondary btn--outline radius--sm" href="#rsvp">RSVP</a>
-                    <a class="btn btn--xl btn--secondary btn--outline radius--sm" href="#rsvp">Logistics</a>
-                </div>
-                <!-- <div class="hero__countdown">
-                    <div class="countdown__days">154</div>
-                    <div class="countdown__hours">6</div>
-                    <div class="countdown__minutes">45</div>
-                    <div class="countdown__seconds">11</div>
-                </div> -->
-            </div>
-            <div class="hero__img-container">
-                <div class="hero__img img">
+    </main>
+
+    <!-- CTA -->
+    <section class="cta section">
+        <div class="cta__wrapper section__wrapper">
+            <div class="cta__img-container">
+                <div class="cta__img img">
                     <img src="./public/images/hero-img.jpeg" alt="hero image">
                 </div>
             </div>
+            <div class="cta__content">
+                <div class="txt__display--xl txt--display">Amanda & Jake</div>
+                <div class="txt__display--md">March 28th, 2026</div>
+                <div class="txt__display--sm txt--centered">1234 Street Name,<br> City, ST 11111</div>
+                <div class="cta__buttons">
+                    <a class="btn btn--xl btn--secondary btn--outline radius--sm" href="#rsvp">RSVP</a>
+                    <a class="btn btn--xl btn--secondary btn--outline radius--sm" href="#rsvp">Logistics</a>
+                </div>
+            </div>
+            
         </div>
-    </main>
 
+    </section>
     <!-- COUNTDOWN -->
     <section class="countdown section">
         <div class="countdown__wrapper section__wrapper">
