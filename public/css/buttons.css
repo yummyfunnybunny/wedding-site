@@ -57,10 +57,10 @@
     --btn-color: var(--color-primary);
 }
 .btn--secondary {
-    --btn-color: var(--color-secondary-dark);
+    --btn-color: var(--color-secondary);
 }
-.btn--tertiary {
-    --btn-color: var(--color-tertiary);
+.btn--cream {
+    --btn-color: var(--color-cream);
 }
 .btn--default {
     --btn-color: var(--color-default);
@@ -87,7 +87,7 @@
 .btn--outline:hover {
     background-color: var(--btn-color);
     border-color: var(--btn-color);
-    color: white;
+    color: var(--color-primary);
 }
 .btn--transparent {
     background-color: transparent;

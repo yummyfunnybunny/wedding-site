@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" wrapper="width=<device-width>, initial-scale=1.0">
+    <!-- <meta name="viewport" wrapper="width=<device-width>, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./public/css/main.css">
     <link rel="stylesheet" href="./public/css/text.css">
     <link rel="stylesheet" href="./public/css/buttons.css">
@@ -36,10 +37,10 @@
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"/>
     
     <!-- FontAwesome -->
-    <!-- <script src="https://kit.fontawesome.com/3a73e56df1.js" crossorigin="anonymous"></script> -->
+     <script src="https://kit.fontawesome.com/3a73e56df1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-      <title>Document</title>
+      <title>Amanda & Jake</title>
 </head>
 
 <style>
@@ -55,12 +56,15 @@
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: 1rem;
+        padding: 0 4rem;
     }
     .section__header {
         grid-column: span 12;
         text-align: center;
-        font-size: 5rem;
+        font-size: 8rem;
         font-family: var(--font-display);
+        margin-bottom: 2rem;
+        /* text-decoration: underline; */
         /* font-weight: bold; */
     }
     .img {
@@ -69,24 +73,54 @@
     }
     img {
         width: 100%;
-        height: 100%;
+        height: auto;
+    }
+    .theme__cream--1 {
+        background-color: var(--color-cream);
+        color: var(--color-primary);
+    }
+    .theme__cream--2 {
+        background-color: var(--color-cream);
+        color: var(--color-secondary);
+    }
+    .theme__primary {
+        background-color: var(--color-primary);
+        color: var(--color-cream);
+    }
+    .theme__secondary {
+        background-color: var(--color-secondary);
+        color: var(--color-cream);
     }
     /* #endregion */
     /* #region - Navbar */
     .nav {
         position: absolute;
         width: 100%;
-
+        z-index: 10;
     }
     .nav__links {
         display:  flex;
         grid-column: span 12;
-        justify-content: space-between;
-        
+        /* justify-content: space-between; */
+        justify-content: center;
+        gap: 4rem;
+        font-family: var(--font-display);
+        font-size: 2rem;
+        /* text-decoration: underline; */
     }
     .nav__links a {
         color: var(--color-cream);
         text-decoration: none;
+        position: relative;
+    }
+    .nav__links a::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--color-cream);
     }
     /* #endregion */
     /* #region - Hero */
@@ -95,7 +129,7 @@
         padding: 0;
         min-height: 90vh;
         align-items: center;
-        color: white;
+        color: var(--color-cream);
     }
     .hero__bg {
         position: absolute;
@@ -104,7 +138,7 @@
         /* background-color: var(--color-cream); */
         background-image: url("public/images/zion-bg.jpg");
         background-size: cover;
-        background-position: right;
+        background-position: center;
         filter: grayscale(100%);
         z-index: -10;
     }
@@ -119,7 +153,6 @@
         position: relative;
         padding: 0;
         min-height: 90vh;
-        background-color: var(--color-cream);
     }
     .cta__wrapper {
         align-items: center;
@@ -137,43 +170,8 @@
         align-items: center;
         justify-content: center;
         gap: 2rem;
-        background-color: var(--color-primary-transparant);
-        padding: 1rem;
-        border: 2px solid var(--color-secondary-dark);
-        color: var(--color-secondary-dark);
-    }
-    .cta__img {
-        padding: 2rem;
-        border: 4px solid var(--color-primary);
-        width: 25rem;
-        position: relative;
-        z-index: 10;
-    }
-    .cta__img::before {
-        position: absolute;
-        content: "";
-        top: 50%;
-        left: 50%;
-        width: 115%;
-        height: 115%;
-        border: 4px solid var(--color-primary);
-        transform: translate(-50%, -50%);
-        z-index: -1;
-    }
-    .cta__img::before {
-        /* top: 0; */
-        /* left: 0; */
-        /* transform: translate(-50%, -50%); */
-    }
-    /* .cta__img::after {
-        bottom: 0;
-        right: 0;
-        transform: translate(50%, 50%);
-    } */
-
-    .cta__buttons {
-        display: flex;
-        gap: 2rem;
+        padding: 4rem;
+        border: 4px solid var(--color-secondary);
     }
     /* #endregion */
     /* #region - Countdown */
@@ -245,56 +243,77 @@
     }
     /* #endregion */
     /* #region RSVP */
-    .rsvp {
-        background-color: var(--color-primary);
-        color: white;
+     .rsvp__wrapper {
+        align-items: center;
+     }
+    .rsvp__img {
+        grid-column: span 5;
+        display: flex;
+        height: fit-content;
+        padding: 1rem;
+    }
+    .rsvp img {
+        filter: grayscale(50%);
     }
     .rsvp__form {
         /* width: 100%; */
         min-width: 30rem;
-        grid-column: span 12;
+        grid-column: span 7;
         justify-self: center;
+        color: var(--color-cream);
     }
     /* #endregion */
     /* #region - SCHEDULE */
     .schedule {
-        background-color: var(--color-4);
-        color: var(--color-secondary);
+        /* background-color: var(--color-cream); */
+        /* color: var(--color-secondary); */
     }
     .schedule__content {
-        grid-column: span 12;
-        grid-row: 2;
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+        grid-column: span 12;
+        margin-top: 2rem;
     }
-    .schedule__img {
-        grid-column: span 4;
-        grid-row: 1;
-    }
-    .schedule__text {
-        justify-self: center;
-        grid-column: span 4;
-        grid-row: 1;
+    .schedule__item {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
+        align-items: center;
+    }
+    .schedule__item i {
+        font-size: 3rem;
+    }
+    .schedule__item .time {
+        font-size: 2rem;
+        font-family: var(--font-body);
+    }
+    .schedule__item .name {
+        font-size: 3rem;
+        text-align: center;
+        font-family: var(--font-display);
     }
     /* #endregion */
     /* #region - Gallery */
     .gallery {
-        /* background-color: var(--color-secondary-light); */
+        background-color: var(--color-secondary);
+        color: var(--color-cream);
+    }
+    .gallery__wrapper {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
     }
     .gallery .swiper {
         grid-column: span 12;
         width: 100%;
         padding: 4rem 4rem;
-        border: 2px solid var(--color-secondary);
-        background-color: #ddd;
-        border-radius: var(--radius-circle);
-        box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
+        /* border: 2px solid var(--color-secondary); */
+        /* background-color: var(--color-cream); */
+        /* box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3); */
     }
     .swiper-slide {
-        width: 50%;
+        /* width: 50%; */
+        width: 25rem;
         height: auto;
         display: flex;
         justify-content: center;
@@ -314,9 +333,10 @@
         bottom: 1rem;
         transform: translateX(-50%);
         padding: 1rem 2rem;
-        background-color: rgba(0,0,0, 0.75);
+        background-color: var(--color-cream);
         border-radius: var(--radius-sm);
         text-align: center;
+        color: var(--color-secondary);
     }
     .gallery__grid {
         grid-column: span 12;
@@ -332,23 +352,131 @@
     .span--2 {
         grid-column: span 2;
     }
+    .swiper-pagination-bullet-active {
+        background-color: var(--color-cream);
+    }
+    /* #endregion */
+    /* #region - Our Story */
+    .story__timeline {
+        grid-column: span 12;
+        display: flex;
+        flex-direction: column;
+        column-gap: 2rem;
+    }
+    .story__item {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        /* align-items: center; */
+    }
+    .story__date {
+        grid-column: span 6;
+        border-right: 4px solid var(--color-primary);
+        text-align: right;
+        padding-right: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        font-size: 3rem;
+        font-family: var(--font-display);
+    }
+    .story__date div {
+        align-self: center;
+    }
+    .story__content {
+        grid-column: span 6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+        /* gap: 1rem; */
+        margin-left: 2rem;
+        /* text-align: center; */
+        padding: 2rem 0;
+    }
+    .story__header {
+        font-size: 3rem;
+        font-family: var(--font-display);
+    }
+    .story__text {
+        font-family: var(--font-body);
+        font-size: 1.25rem;
+    }
     /* #endregion */
     /* #region - Logistics */
     .logistics {
-
+        background-color: var(--color-primary);
+        color: var(--color-cream);
     }
-    .logistics__text {
+    .logistics a {
+        color: var(--color-cream);
+    }
+    .logistics__views {
         width: 100%;
-        height: 20rem;
-        border: 1px solid red;
+        padding: 2rem;
     }
     .logistics__content {
         grid-column: span 12;
     }
+    .logistics__buttons {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+    /* views */
+    .logistics__views .img {
+        max-width: 30rem;
+        justify-self: center;
+    }
+    .logistics__views .venue {
+        display: none;
+    }
+    .view__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 2rem;
+        margin: 2rem;
+    }
+    .view__grid .cell {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        align-items: center;
+    }
+    .logistics__header {
+        font-size: 5rem;
+        font-family: var(--font-display);
+        text-align: center;
+    }
+    .logistics__subheader {
+        font-size: 3rem;
+        font-family: var(--font-display);
+    }
+    .logistics__text {
+        font-family: var(--font-body);
+        font-size: 1.25rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .hotel__info {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 1.25rem;
+        font-family: var(--font-body);
+        margin: 2rem 0;
+        gap: 1rem;
+    }
+    /* mapbox */
     .logistics__map {
         position: relative;
         width: 100%;
         height: 30rem;
+        grid-column: span 12;
+        margin: 2rem 0;
     }
     #coords-box {
         position: absolute;
@@ -363,7 +491,7 @@
         z-index: 1;
     }
     .mapboxgl-popup-content {
-        background-color: white;
+        background-color: var(--color-cream);
         border-radius: 8px;
         padding: 10px;
         font-family: sans-serif;
@@ -383,7 +511,25 @@
         pointer-events: none;
     }
     /* #endregion */
-
+    /* #region - Registry */
+    .registry__wrapper {
+        padding: 4rem;
+        
+    }
+    .registry__content {
+        grid-column: span 12;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 4rem;
+        border: 4px solid var(--color-secondary);
+    }
+    .registry__text {
+        font-family: var(--font-body);
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    /* #endregion */
     /* #region - Modal */
     .modal {
         /* position: relative; */
@@ -405,11 +551,10 @@
         transform: translate(-50%, -50%);
         width: fit-content;
         height: fit-content;
-        min-width: 30rem;
-        min-height: 20rem;
-        background-color: white;
-        border-radius: 10px;
-        border: 2px solid black;
+        min-width: 40rem;
+        min-height: 25rem;
+        background-color: var(--color-cream);
+        border: 2px solid var(--color-secondary);
         z-index: 110;
         display: flex;
         justify-content: center;
@@ -418,12 +563,41 @@
     .modal__content {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
         align-items: center;
         margin: 1rem;
+        color: var(--color-secondary)
+    }
+    .modal__header {
+        margin: 0;
+    }
+    .modal__message {
+        font-family: var(--font-body);
+        font-size: 2rem;
     }
     /* #endregion */
-
+    /* #region - Media Queries */
+    @media screen and (max-width: 768px) {
+        :root {
+            font-size: 12px;
+        }
+        .cta {
+            min-height: initial;
+            padding: 10rem 0;
+        }
+        .rsvp__img {
+            grid-column: span 6;
+        }
+        .rsvp__form {
+            grid-column: span 6;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        :root {
+            font-size: 10px;
+        }
+    }
+    /* #endregion */
 </style>
 
 <body>
@@ -433,10 +607,10 @@
         <div class="nav__wrapper section__wrapper">
             <div class="nav__links">
                 <a href="#rsvp">RSVP</a>
-                <a href="#rsvp">Details</a>
-                <a href="#rsvp">Schedule</a>
+                <a href="#story">Story</a>
+                <a href="#schedule">Schedule</a>
                 <a href="#logistics">Logistics</a>
-                <a href="#rsvp">Gallery</a>
+                <a href="#gallery">Gallery</a>
             </div>
         </div>
     </nav>
@@ -458,42 +632,29 @@
     </main>
 
     <!-- CTA -->
-    <section class="cta section">
+    <section class="cta section theme__cream--2">
         <div class="cta__wrapper section__wrapper">
-            <!-- <div class="cta__img-container">
-                <div class="cta__img img">
-                    <img src="./public/images/hero-img.jpeg" alt="hero image">
-                </div>
-            </div> -->
             <div class="cta__content">
-                <div class="txt__display--xl txt--display">Amanda & Jake</div>
+                <div class="section__header">Amanda & Jake</div>
                 <div class="txt__display--md">March 28th, 2026</div>
-                <div class="txt__display--sm txt--centered">1234 Street Name,<br> City, ST 11111</div>
-                <div class="cta__buttons">
-                    <a class="btn btn--xl btn--secondary btn--outline radius--sm" href="#rsvp">RSVP</a>
-                    <a class="btn btn--xl btn--secondary btn--outline radius--sm" href="#rsvp">Logistics</a>
-                </div>
+                <div class="txt__display--sm txt--centered">343 West 12th Street,<br> Claremont, CA 91711</div>
             </div>
             
         </div>
 
     </section>
-    <!-- COUNTDOWN -->
-    <!-- <section class="countdown section">
-        <div class="countdown__wrapper section__wrapper">
-            <div class="section__header">Coming Soon</div>
-            <div class="countdown__container">
-                <div class="countdown__days">154</div>
-                <div class="countdown__hours">6</div>
-                <div class="countdown__minutes">45</div>
-                <div class="countdown__seconds">11</div>
-            </div>
-        </div>
-    </section> -->
 
-    <section id="rsvp" class="rsvp section">
-        <div class="section__wrapper">
+    <section id="rsvp" class="rsvp section theme__primary">
+        <div class="rsvp__wrapper section__wrapper">
             <div class="section__header">RSVP</div>
+            <!-- <div class="rsvp__content"> -->
+                <div class="rsvp__img">
+                    <div class="rsvp__border">
+                        <img class="img--edge-fade" src="/public/images/hero-img.jpeg" alt="">
+                    </div>
+                </div>
+            <!-- </div> -->
+
             <form id="rsvp-form" class="rsvp__form form">
                 
                 <!-- Name -->
@@ -578,25 +739,51 @@
                  <input type="hidden" name="_template" value="table">
 
                 <!-- Submit -->
-                <button class="btn btn--xl btn--secondary radius--sm" type="submit" style="color: white;">Submit</button>
+                <button class="btn btn--xl btn--cream btn--outline" type="submit">Submit</button>
             </form>
         </div>
     </section>
 
     <!-- WEDDING SCHEDULE -->
-    <section class="schedule section">
+    <section id="schedule" class="schedule section theme__cream--1">
         <div class="section__wrapper">
             <div class="section__header">Wedding Schedule</div>
             <div class="schedule__content">
-                <div class="schedule__img"></div>
-                <div class="schedule__text">
-                    <div>4:00pm - Arrival</div>
-                    <div>4:30pm - Ceremony</div>
-                    <div>5:00pm - Photos & Drinks</div>
-                    <div>5:30 - Dinner & Reception</div>
-                    <div>9:00pm - Reception Ends</div>
-                </div>
-                <div class="schedule__img"></div>
+                <!-- <div class="schedule__img"></div> -->
+                <!-- <div class="schedule__text"> -->
+                    <div class="schedule__item">
+                        <i class="fa-solid fa-car-side"></i>
+                        <div class="time">4:00pm</div>
+                        <div class="name">Arrival</div> 
+                    </div>
+                    <div class="schedule__item">
+                        <i class="fa-solid fa-ring"></i>
+                        <div class="time">4:30pm</div>
+                        <div class="name">Ceremony</div> 
+                    </div>
+                    <div class="schedule__item">
+                        <i class="fa-solid fa-camera"></i>
+                        <div class="time">5:00pm</div>
+                        <div class="name">Photos & Drinks</div> 
+                    </div>
+                    <div class="schedule__item">
+                        <i class="fa-solid fa-champagne-glasses"></i>
+                        <div class="time">5:30pm</div>
+                        <div class="name">Dinner & Reception</div> 
+                    </div>
+                    <div class="schedule__item">
+                        <i class="fa-solid fa-hourglass-end"></i>
+                        <div class="time">9:00pm</div>
+                        <div class="name">Reception Ends</div> 
+                    </div>
+
+                    <!-- <div><i class="fa-solid fa-ring"></i> 4:30pm - Ceremony</div> -->
+                    <!-- <div><i class="fa-solid fa-camera"></i>5:00pm - Photos & Drinks</div> -->
+                    <!-- <div><i class="fa-solid fa-champagne-glasses"></i>5:30 - Dinner & Reception</div> -->
+                    <!-- <div><i class="fa-solid fa-hourglass-end"></i>9:00pm - Reception Ends</div> -->
+                    
+                <!-- </div> -->
+                <!-- <div class="schedule__img"></div> -->
             </div>
             <!-- what time guests should arrive -->
             <!-- what time the ceremony starts -->
@@ -607,8 +794,8 @@
     </section>
 
     <!-- GALLERY -->
-    <section class="gallery section">
-        <div class="section__wrapper">
+    <section id="gallery" class="gallery section">
+        <div class="gallery__wrapper section__wrapper">
             <div class="section__header">Gallery</div>
             <div class="swiper gallery__swiper">
                 <div class="swiper-wrapper">
@@ -660,29 +847,73 @@
         <!-- Initialize Swiper -->
         <script>
             var swiper = new Swiper(".gallery__swiper", {
-            effect: "coverflow",
-            grabCursor: true,
             centeredSlides: true,
             slidesPerView: "auto",
+            spaceBetween: 30,
             loop: true,
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: false,
-            },
             pagination: {
                 el: ".swiper-pagination",
+                clickable: true,
             },
             });
         </script>
 
     </section>
 
-    <section class="story section">
+    <!-- STORY -->
+    <section id="story" class="story section theme__cream--1">
         <div class="section__wrapper">
             <div class="section__header">Our Story</div>
+            <div class="story__timeline">
+                <div class="story__item">
+                    <div class="story__date">
+                        <div>March 25th, 2023</div>
+                    </div>
+                    <div class="story__content">
+                        <div class="story__header">First Contact</div>
+                        <div class="story__text">We met on a dating app... how original!</div>
+                    </div>
+                </div>
+                <div class="story__item">
+                    <div class="story__date">
+                        <div>April 1st, 2023</div>
+                    </div>
+                    <div class="story__content">
+                        <div class="story__header">Our First Date</div>
+                        <div class="story__text">We had our first date at a conveyorbelt sushi restaurant! Yum!</div>
+                    </div>
+                </div>
+
+                <div class="story__item">
+                    <div class="story__date">
+                        <div>May 1st, 2023</div>
+                    </div>
+                    <div class="story__content">
+                        <div class="story__header">Our First Hike</div>
+                        <div class="story__text">We hiked Mt. whatever. It was grueling!</div>
+                    </div>
+                </div>
+
+                <div class="story__item">
+                    <div class="story__date">
+                        <div>May 1st, 2023</div>
+                    </div>
+                    <div class="story__content">
+                        <div class="story__header">Our First Trip Together</div>
+                        <div class="story__text">We went to Bryce Canyon, where it rained on us all night in our tiny tent.</div>
+                    </div>
+                </div>
+
+                <div class="story__item">
+                    <div class="story__date">
+                        <div>December 25th, 2023</div>
+                    </div>
+                    <div class="story__content">
+                        <div class="story__header">Our First Christmas</div>
+                        <div class="story__text">We didn't have a christmas tree, so we had a christmas wall instead.</div>
+                    </div>
+                </div>
+            </div>
             <!-- how we met -->
             <!-- first date -->
             <!-- first hike -->
@@ -696,16 +927,64 @@
         </div>
     </section>
 
-    <section class="logistics section">
+    <!-- LOGISTICS -->
+    <section id="logistics" class="logistics section">
         <div class="section__wrapper">
             <div class="section__header">Logistics</div>
             <div class="logistics__content">
-                <div class="logistics__views">   
-                    <button class="btn btn--xl btn--secondary btn--outline radius--sm">Airport</a>             
-                    <button class="btn btn--xl btn--secondary btn--outline radius--sm">Hotel</a>               
-                    <button class="btn btn--xl btn--secondary btn--outline radius--sm">Venue</a>               
+                <div class="logistics__buttons">   
+                    <button class="btn btn--xl btn--cream btn--outline views-btn" data-view ="hotel-view">Hotel</button>
+                    <button class="btn btn--xl btn--cream btn--outline views-btn" data-view ="venue-view">Venue</button>
                 </div>
-                <div class="logistics__text"></div>
+                <div class="logistics__views">
+                    <div id="hotel-view" class="view hotel">
+                        <div class="logistics__header">Double Tree Hotel</div>
+                        <div class="img">
+                            <img class="img--edge-fade" src="./public/images/double-tree-hotel.jpg" alt="">
+                        </div>
+                        <div class="view__grid">
+                            <div class="cell address">
+                                <div class="logistics__subheader">Address</div>
+                                <div class="logistics__text">555 W. Foothill Blvd.<br>Claremont, Ca 91711</div>
+                            </div>
+                            <div class="cell about">
+                                <div class="logistics__subheader">About</div>
+                                <div class="logistics__text">The Double Tree Hotel Is just off foothill Blvd, and a very short drive to the wedding venue.</div>
+                            </div>
+                            <div class="cell booking">
+                                <div class="logistics__subheader">Booking</div>
+                                <div class="logistics__text">Book one of our reserved rooms using the link below:</div>
+                                <div class="logistics__text"><a href="" target="_blank">Reserve a Room</a></div>
+                            </div>
+                            <div class="cell shuttle">
+                                <div class="logistics__subheader">Shuttle Service</div>
+                                <div class="logistics__text">There is a free shuttle service that will get you to and from the wedding venue</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="venue-view" class="view venue">
+                        <div class="logistics__header">Women's Club of Claremont</div>
+                        <div class="img">
+                            <img class="img--edge-fade" src="./public/images/womens-club-of-claremont.jpg" alt="">
+                        </div>
+                        <div class="view__grid">
+                            <div class="cell address">
+                                <div class="logistics__subheader">Address</div>
+                                <div class="logistics__text">343 West 12th Street.<br>Claremont, Ca 91711</div>
+                            </div>
+                            <div class="cell about">
+                                <div class="logistics__subheader">About</div>
+                                <div class="logistics__text">
+                                    <!-- <p>The Womans Club of Claremont is located in the heart of Claremont Village, just across the street from the Double Tree Hotel.</p> -->
+                                    <p>The venue will host the entire event. The ceremony will be held in the back yard, and the reception will be held indoors in their dining hall
+                                    To get more info about the venue and to see more photos, visit their website:</p>
+                                    <a href="https://www.womansclubofclaremont.com/">Women's Club of Claremont</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div id="airport-view"></div> -->
+                </div>
                 <div id="map" class="logistics__map">
                     <!-- <div id="coords-box">Lng: 0.00, Lat: 0.00</div> -->
                 </div>
@@ -713,15 +992,17 @@
         </div>
     </section>
 
-    <section class="attire section">
-        <div class="section__wrapper">
-            <div class="section__header">Dress Attire</div>
-        </div>
-    </section>
-
-    <section class="registry section">
-        <div class="section__wrapper">
-            <div class="section__header">Registry</div>
+    <!-- REGISTRY -->
+    <section class="registry section theme__cream--2">
+        <div class="registry__wrapper section__wrapper">
+            <!-- <div class="registry__border"> -->
+                <div class="registry__content">
+                    <div class="section__header">Registry</div>
+                    <div class="registry__text">- gifts are not expected -</div>
+                    <div class="registry__text">Your presence is present enough, but for those who wish to contribute, we're skipping out of tradition and would love for you to help us create some new experiences instead.</div>
+                    <div class="registry__text">We are lucky enough to already have nearly everything we need for this new chapter together! However, for friends and family who have expressed an interest, we have created a gift registry for your convenience here</div>
+                </div>
+            <!-- </div> -->
             <!-- gifts are not expected -->
             <!-- Your presence is present enough, but for those who wish to contribute, we're skipping out of tradition and would love for you to help us create some new experiences instead -->
             <!-- "We are lucky enough to already have nearly everything we need for this new chapter together! However, for friends and family who have expressed an interest, we have created a gift registry for your convenience here: (link)". -->
@@ -729,13 +1010,14 @@
         </div>
     </section>
 
+    <!-- MODAL -->
     <div id="modal" class="modal" style="display: none; opacity: 0;">
         <div id="modal-overlay" class="modal__overlay"></div>
         <div class="modal__wrapper">
             <div class="modal__content">
                 <div class="modal__header section__header">Thank You!</div>
                 <div class="modal__message">We Can't wait to see you on our big day!</div>
-                <button id="close-modal" class="btn modal__btn btn--xl btn--secondary btn--outline radius--sm">Close</button>
+                <button id="close-modal" class="btn modal__btn btn--xl btn--secondary btn--outline">Close</button>
             </div>
         </div>
     </div>
@@ -827,7 +1109,7 @@
         // Example: Add pin for New York
         addMarkerByAddress('555 W Foothill Blvd, Claremont, CA 91711', "Double Tree Hotel", "fa-bed");
         addMarkerByAddress('2222 International Way, Ontario, CA 91761', "Ontario International Airport", "fa-plane");
-        addMarkerByAddress('343 W 12th St, Claremont, CA 91711', "Wedding Venue", "fa-heart");
+        addMarkerByAddress('343 W 12th St, Claremont, CA 91711', "Women's Club of Claremont", "fa-heart");
 
 
         const coordsBox = $("#coords-box");
@@ -940,6 +1222,19 @@
             });
 
         });
+        // #endregion
+
+        // #region - Logistics
+        var viewsBtns = $(".views-btn");
+        $.each(viewsBtns, function(idx, btn) {
+            $(btn).on("click", function(e) {
+                var view = $(e.target).data("view");
+                $(".logistics__views .view").css("display", "none");
+                $(`#${view}`).css("display", "block");
+
+            });
+        });
+        
         // #endregion
     
         // #region - Modal
