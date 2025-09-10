@@ -91,6 +91,9 @@
         background-color: var(--color-secondary);
         color: var(--color-cream);
     }
+    .foliage {
+        position: absolute;
+    }
     /* #endregion */
     /* #region - Navbar */
     .nav {
@@ -153,6 +156,7 @@
         position: relative;
         padding: 0;
         min-height: 90vh;
+        overflow: hidden;
     }
     .cta__wrapper {
         align-items: center;
@@ -172,6 +176,22 @@
         gap: 2rem;
         padding: 4rem;
         border: 4px solid var(--color-secondary);
+        z-index: 10;
+        background-color: var(--color-cream);
+    }
+    .cta .foliage--1 {
+        bottom: -100px;
+        left: 25px;
+        width: 500px;
+        height: auto;
+        transform: scaleX(-1) rotate(-35deg);
+    }
+    .cta .foliage--2 {
+        top: 0px;
+        right: 0px;
+        width: 350px;
+        height: auto;
+        transform: scaleX(-1) rotate(150deg);
     }
     /* #endregion */
     /* #region - Countdown */
@@ -265,14 +285,18 @@
     /* #endregion */
     /* #region - SCHEDULE */
     .schedule {
-        /* background-color: var(--color-cream); */
-        /* color: var(--color-secondary); */
+        position: relative;
+        overflow: hidden;
+    }
+    .schedule .section__header {
+        z-index: 10;
     }
     .schedule__content {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-column: span 12;
         margin-top: 2rem;
+        z-index: 10;
     }
     .schedule__item {
         display: flex;
@@ -283,6 +307,9 @@
     .schedule__item i {
         font-size: 3rem;
     }
+    .schedule__item img {
+        max-width: 5rem;
+    }
     .schedule__item .time {
         font-size: 2rem;
         font-family: var(--font-body);
@@ -291,6 +318,20 @@
         font-size: 3rem;
         text-align: center;
         font-family: var(--font-display);
+    }
+    .schedule .foliage--1 {
+        bottom: -100px;
+        left: 25px;
+        width: 300px;
+        height: auto;
+        transform: scaleX(-1) rotate(-35deg);
+    }
+    .schedule .foliage--2 {
+        bottom: -100px;
+        right: 100px;
+        width: 450px;
+        height: auto;
+        transform:  rotate(-35deg);
     }
     /* #endregion */
     /* #region - Gallery */
@@ -357,11 +398,19 @@
     }
     /* #endregion */
     /* #region - Our Story */
+    .story {
+        position: relative;
+        overflow: hidden;
+    }
+    .story .section__header {
+        z-index: 10;
+    }
     .story__timeline {
         grid-column: span 12;
         display: flex;
         flex-direction: column;
         column-gap: 2rem;
+        z-index: 10;
     }
     .story__item {
         display: grid;
@@ -400,6 +449,34 @@
     .story__text {
         font-family: var(--font-body);
         font-size: 1.25rem;
+    }
+    .story .foliage--1 {
+        top: -100px;
+        left: -50px;
+        width: 400px;
+        height: auto;
+        transform: scaleX(-1) rotate(210deg);
+    }
+    .story .foliage--2 {
+        top: -50px;
+        right: 50px;
+        width: 400px;
+        height: auto;
+        transform: rotate(225deg);
+    }
+    .story .foliage--3 {
+        bottom: -100px;
+        left: 300px;
+        width: 250px;
+        height: auto;
+        transform:  rotate(15deg);
+    }
+    .story .foliage--4 {
+        bottom: -10px;
+        right: 200px;
+        width: 250px;
+        height: auto;
+        transform: scaleX(-1) rotate(15deg);
     }
     /* #endregion */
     /* #region - Logistics */
@@ -512,22 +589,42 @@
     }
     /* #endregion */
     /* #region - Registry */
+    .registry {
+        overflow: hidden;
+        position: relative;
+    }
     .registry__wrapper {
         padding: 4rem;
         
     }
     .registry__content {
-        grid-column: span 12;
+        grid-column: 1 / 13;
         display: flex;
         flex-direction: column;
         gap: 2rem;
         padding: 4rem;
         border: 4px solid var(--color-secondary);
+        z-index: 10;
+        background-color: var(--color-cream);
     }
     .registry__text {
         font-family: var(--font-body);
         font-size: 1.5rem;
         text-align: center;
+    }
+    .registry .foliage--1 {
+        bottom: -75px;
+        left: 100px;
+        width: 600px;
+        height: auto;
+        transform: rotate(-25deg);
+    }
+    .registry .foliage--2 {
+        top: -10px;
+        right: 0px;
+        width: 550px;
+        height: auto;
+        transform: scaleX(-1) rotate(140deg);
     }
     /* #endregion */
     /* #region - Modal */
@@ -577,19 +674,101 @@
     }
     /* #endregion */
     /* #region - Media Queries */
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         :root {
             font-size: 12px;
         }
+        /* CTA */
+        .cta__content {
+            grid-column: 2 / 12;
+        }
+        .cta .foliage--1 {
+            width: 300px;
+        }
+        .cta .foliage--2 {
+            width: 200px;
+        }
+        /* Schedule */
+        .schedule .foliage--1 {
+            width: 250px;
+        }
+        .schedule .foliage--2 {
+            width: 300px;
+        }
+        /* Story */
+        .story .foliage--1 {
+            width: 300px;
+        }
+        .story .foliage--2 {
+            width: 300px;
+            right: 25px;
+        }
+        .story .foliage--3 {
+            width: 200px;
+            left: 75px;
+        }
+        .story .foliage--4 {
+            width: 200px;
+            right: 50px;
+        }
+        /* Registry */
+        .registry__content {
+            grid-column: 2 / 12;
+        }
+        .registry .foliage--1 {
+            width: 500px;
+        }
+        .registry .foliage--2 {
+            width: 400px;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        :root {
+            font-size: 10px;
+        }
+        /* CTA */
         .cta {
             min-height: initial;
             padding: 10rem 0;
         }
+        /* RSVP */
         .rsvp__img {
-            grid-column: span 6;
+            grid-column: 4 / 10;
+            grid-row: 2;
         }
         .rsvp__form {
-            grid-column: span 6;
+            grid-column: 1 / 13;
+            grid-row: 3;
+        }
+        /* Schedule */
+        .schedule .foliage--1 {
+            width: 150px;
+        }
+        .schedule .foliage--2 {
+            width: 200px;
+            right: 50px;
+        }
+        /* Story */
+        .story .foliage--1 {
+            width: 200px;
+            top: -25px;
+            left: 0;
+        }
+        .story .foliage--2 {
+            width: 200px;
+            right: 25px;
+        }
+        .story .foliage--3 {
+            width: 150px;
+            left: 75px;
+        }
+        .story .foliage--4 {
+            width: 150px;
+            right: 50px;
+        }
+        /* Registry */
+        .registry .foliage--2 {
+            display: none;
         }
     }
     @media screen and (max-width: 600px) {
@@ -641,7 +820,8 @@
             </div>
             
         </div>
-
+        <img class="foliage foliage--1" src="/public/images/foliage1.svg" alt="">
+        <img class="foliage foliage--2" src="/public/images/foliage4.svg" alt="">
     </section>
 
     <section id="rsvp" class="rsvp section theme__primary">
@@ -656,7 +836,6 @@
             <!-- </div> -->
 
             <form id="rsvp-form" class="rsvp__form form">
-                
                 <!-- Name -->
                 <div class="input">
                     <div class="input__header">Name</div>
@@ -749,48 +928,35 @@
         <div class="section__wrapper">
             <div class="section__header">Wedding Schedule</div>
             <div class="schedule__content">
-                <!-- <div class="schedule__img"></div> -->
-                <!-- <div class="schedule__text"> -->
                     <div class="schedule__item">
-                        <i class="fa-solid fa-car-side"></i>
-                        <div class="time">4:00pm</div>
+                        <img src="/public/images/calendar-green.png" alt="">
+                        <div class="time">3:00pm</div>
                         <div class="name">Arrival</div> 
                     </div>
                     <div class="schedule__item">
-                        <i class="fa-solid fa-ring"></i>
-                        <div class="time">4:30pm</div>
+                        <img src="/public/images/arch-green.png" alt="">
+                        <div class="time">3:30pm</div>
                         <div class="name">Ceremony</div> 
                     </div>
                     <div class="schedule__item">
-                        <i class="fa-solid fa-camera"></i>
-                        <div class="time">5:00pm</div>
+                        <img src="/public/images/camera-green.png" alt="">
+                        <div class="time">4:00pm</div>
                         <div class="name">Photos & Drinks</div> 
                     </div>
                     <div class="schedule__item">
-                        <i class="fa-solid fa-champagne-glasses"></i>
-                        <div class="time">5:30pm</div>
+                        <img src="/public/images/cake-green.png" alt="">
+                        <div class="time">5:00pm</div>
                         <div class="name">Dinner & Reception</div> 
                     </div>
                     <div class="schedule__item">
-                        <i class="fa-solid fa-hourglass-end"></i>
-                        <div class="time">9:00pm</div>
+                        <img src="/public/images/married-green.png" alt="">
+                        <div class="time">8:30pm</div>
                         <div class="name">Reception Ends</div> 
                     </div>
-
-                    <!-- <div><i class="fa-solid fa-ring"></i> 4:30pm - Ceremony</div> -->
-                    <!-- <div><i class="fa-solid fa-camera"></i>5:00pm - Photos & Drinks</div> -->
-                    <!-- <div><i class="fa-solid fa-champagne-glasses"></i>5:30 - Dinner & Reception</div> -->
-                    <!-- <div><i class="fa-solid fa-hourglass-end"></i>9:00pm - Reception Ends</div> -->
-                    
-                <!-- </div> -->
-                <!-- <div class="schedule__img"></div> -->
             </div>
-            <!-- what time guests should arrive -->
-            <!-- what time the ceremony starts -->
-            <!-- photos & drinks -->
-            <!-- dinner & reception -->
-            <!-- party ends -->
         </div>
+        <img class="foliage foliage--1" src="/public/images/foliage2.svg" alt="">
+        <img class="foliage foliage--2" src="/public/images/foliage3.svg" alt="">
     </section>
 
     <!-- GALLERY -->
@@ -925,6 +1091,10 @@
 
             <!-- everything... remove gallery -->
         </div>
+        <img class="foliage foliage--1" src="/public/images/foliage1.svg" alt="">
+        <img class="foliage foliage--2" src="/public/images/foliage3.svg" alt="">
+        <img class="foliage foliage--3" src="/public/images/foliage2.svg" alt="">
+        <img class="foliage foliage--4" src="/public/images/foliage4.svg" alt="">
     </section>
 
     <!-- LOGISTICS -->
@@ -1008,6 +1178,8 @@
             <!-- "We are lucky enough to already have nearly everything we need for this new chapter together! However, for friends and family who have expressed an interest, we have created a gift registry for your convenience here: (link)". -->
             <!-- venmo account QR code -->
         </div>
+        <img class="foliage foliage--1" src="/public/images/foliage3.svg" alt="">
+        <img class="foliage foliage--2" src="/public/images/foliage1.svg" alt="">
     </section>
 
     <!-- MODAL -->
