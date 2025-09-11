@@ -326,17 +326,17 @@
     }
     .schedule .foliage--1 {
         bottom: -100px;
-        left: 25px;
+        left: -50px;
         width: 300px;
         height: auto;
         transform: scaleX(-1) rotate(-35deg);
     }
     .schedule .foliage--2 {
-        bottom: -100px;
-        right: 100px;
+        top: -100px;
+        right: -50px;
         width: 450px;
         height: auto;
-        transform:  rotate(-35deg);
+        transform:  rotate(210deg);
     }
     /* #endregion */
     /* #region - Gallery */
@@ -459,25 +459,25 @@
         transform: scaleX(-1) rotate(210deg);
     }
     .story .foliage--2 {
-        top: -50px;
+        top: 200px;
         right: 50px;
-        width: 400px;
+        width: 300px;
         height: auto;
-        transform: rotate(225deg);
+        transform: scaleX(-1) rotate(105deg);
     }
     .story .foliage--3 {
-        bottom: -100px;
-        left: 300px;
+        bottom: 300px;
+        left: 50px;
         width: 250px;
         height: auto;
-        transform:  rotate(15deg);
+        transform:  rotate(75deg);
     }
     .story .foliage--4 {
         bottom: -60px;
-        right: 200px;
-        width: 250px;
+        right: 0px;
+        width: 400px;
         height: auto;
-        transform: scaleX(-1) rotate(15deg);
+        transform: scaleX(-1) rotate(25deg);
     }
     /* #endregion */
     /* #region - Logistics */
@@ -530,6 +530,7 @@
     .logistics__subheader {
         font-size: 3rem;
         font-family: var(--font-display);
+        text-align: center;
     }
     .logistics__text {
         font-family: var(--font-body);
@@ -615,15 +616,15 @@
     }
     .registry .foliage--1 {
         bottom: -75px;
-        left: 100px;
-        width: 600px;
+        left: 0px;
+        width: 300px;
         height: auto;
         transform: rotate(-25deg);
     }
     .registry .foliage--2 {
         top: -10px;
         right: 0px;
-        width: 550px;
+        width: 300px;
         height: auto;
         transform: scaleX(-1) rotate(140deg);
     }
@@ -701,40 +702,51 @@
             width: 300px;
         }
         .story .foliage--2 {
-            width: 300px;
-            right: 25px;
+            width: 200px;
         }
         .story .foliage--3 {
+            bottom: 150px;
             width: 200px;
-            left: 75px;
         }
         .story .foliage--4 {
-            width: 200px;
-            right: 50px;
+            bottom: -100px;
+            width: 300px;
         }
         /* Registry */
         .registry__content {
             grid-column: 2 / 12;
         }
-        .registry .foliage--1 {
+        /* .registry .foliage--1 {
             width: 500px;
         }
         .registry .foliage--2 {
             width: 400px;
-        }
+        } */
     }
     @media screen and (max-width: 768px) {
         :root {
             font-size: 10px;
+        }
+        /* Navbar */
+        .nav__links {
+            gap: 2rem;
+        }
+        /* HERO */
+        .countdown__container {
+            gap: 2rem;
         }
         /* CTA */
         .cta {
             min-height: initial;
             padding: 10rem 0;
         }
+        .cta__content {
+            grid-column: 1 / 13;
+            padding: 2rem;
+        }
         /* RSVP */
         .rsvp__img {
-            grid-column: 4 / 10;
+            grid-column: 2 / 12;
             grid-row: 2;
         }
         .rsvp__form {
@@ -762,29 +774,35 @@
         }
         .schedule .foliage--2 {
             width: 200px;
-            right: 50px;
+            /* right: 50px; */
         }
         /* Story */
         .story .foliage--1 {
             width: 200px;
-            top: -25px;
-            left: 0;
         }
         .story .foliage--2 {
-            width: 200px;
-            right: 25px;
+            width: 100px;
+            right: 0;
+            top: 300px;
         }
         .story .foliage--3 {
-            width: 150px;
-            left: 75px;
+            width: 100px;
+            left: 0;
+            bottom: 300px;
         }
         .story .foliage--4 {
-            width: 150px;
-            right: 50px;
+            width: 200px;
         }
         /* Registry */
+        .registry__content {
+            grid-column: 1 / 13;
+            padding: 2rem;
+        }
+        .registry .foliage--1 {
+            width: 200px;
+        }
         .registry .foliage--2 {
-            display: none;
+            width: 200px;
         }
     }
     @media screen and (max-width: 600px) {
@@ -1253,7 +1271,7 @@
                     <!-- <div id="airport-view"></div> -->
                 </div>
                 <div id="map" class="logistics__map">
-                    <!-- <div id="coords-box">Lng: 0.00, Lat: 0.00</div> -->
+                    <div id="coords-box">Lng: 0.00, Lat: 0.00</div>
                 </div>
             </div>
         </div>
@@ -1327,7 +1345,8 @@
         const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11', // other styles: light-v10, dark-v10, etc.
-            center: [-117.71919, 34.10560], // USA center
+            // center: [-117.71919, 34.10560], // USA center
+            center: [-117.72122, 34.10682], // USA center
             zoom: 15
         });
 
