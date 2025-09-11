@@ -94,6 +94,11 @@
     .foliage {
         position: absolute;
     }
+    .btn--active {
+        background-color: var(--btn-color);
+        border-color: var(--btn-color);
+        color: var(--color-primary);
+    }
     /* #endregion */
     /* #region - Navbar */
     .nav {
@@ -1218,7 +1223,7 @@
             <div class="section__header">Logistics</div>
             <div class="logistics__content">
                 <div class="logistics__buttons">   
-                    <button class="btn btn--xl btn--cream btn--outline views-btn" data-view ="hotel-view">Hotel</button>
+                    <button class="btn btn--xl btn--cream btn--outline views-btn btn--active" data-view ="hotel-view">Hotel</button>
                     <button class="btn btn--xl btn--cream btn--outline views-btn" data-view ="venue-view">Venue</button>
                 </div>
                 <div class="logistics__views">
@@ -1509,6 +1514,8 @@
         var viewsBtns = $(".views-btn");
         $.each(viewsBtns, function(idx, btn) {
             $(btn).on("click", function(e) {
+                $(".views-btn").removeClass("btn--active");
+                $(e.target).addClass("btn--active");
                 var view = $(e.target).data("view");
                 $(".logistics__views .view").css("display", "none");
                 $(`#${view}`).css("display", "block");
