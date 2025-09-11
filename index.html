@@ -415,7 +415,6 @@
     .story__item {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        /* align-items: center; */
     }
     .story__date {
         grid-column: span 6;
@@ -436,10 +435,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        /* align-items: center; */
-        /* gap: 1rem; */
         margin-left: 2rem;
-        /* text-align: center; */
         padding: 2rem 0;
     }
     .story__header {
@@ -472,7 +468,7 @@
         transform:  rotate(15deg);
     }
     .story .foliage--4 {
-        bottom: -10px;
+        bottom: -60px;
         right: 200px;
         width: 250px;
         height: auto;
@@ -579,11 +575,11 @@
 
     .popup-content {
         font-weight: bold;
-        color: #0077cc;
+        color: var(--color-secondary);
     }
     .map-icon {
         font-size: 2rem;
-        color: #e63946;
+        color: var(--color-primary);
         text-shadow: 0 1px 3px rgba(0,0,0,0.3);
         pointer-events: none;
     }
@@ -955,8 +951,8 @@
                     </div>
             </div>
         </div>
-        <img class="foliage foliage--1" src="/public/images/foliage2.svg" alt="">
-        <img class="foliage foliage--2" src="/public/images/foliage3.svg" alt="">
+        <img class="foliage foliage--1" src="/public/images/foliage4.svg" alt="">
+        <img class="foliage foliage--2" src="/public/images/foliage1.svg" alt="">
     </section>
 
     <!-- GALLERY -->
@@ -965,46 +961,82 @@
             <div class="section__header">Gallery</div>
             <div class="swiper gallery__swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+                    <a class="swiper-slide" href="./public/images/story-1.jpg">
                         <img class="img--edge-fade" src="./public/images/story-1.jpeg" />
                         <div class="img-text txt__body--lg txt__col--primary">Vegas, 2024</div>
-                    </div>
-                    <div class="swiper-slide">
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-2.jpg">
                         <img class="img--edge-fade" src="./public/images/story-2.jpg" />
                         <div class="img-text txt__body--lg txt__col--primary">Breckenridge CO, 2025</div>
-                    </div>
-                    <div class="swiper-slide">
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-3.jpg">
                         <img class="img--edge-fade" src="./public/images/story-3.jpeg" />
                         <div class="img-text txt__body--lg txt__col--primary">Bryce Canyon, 2024</div>
-                    </div>
-                    <div class="swiper-slide">
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-4.jpg">
                         <img class="img--edge-fade" src="./public/images/story-4.jpeg" />
                         <div class="img-text txt__body--lg txt__col--primary">Luminaria, 2024</div>
-                    </div>
-                    <div class="swiper-slide">
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-5.jpg">
                         <img class="img--edge-fade" src="./public/images/story-5.jpg" />
                         <div class="img-text txt__body--lg txt__col--primary">Breckenridge CO, 2025</div>
-                    </div>
-                    <div class="swiper-slide">
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-6.jpg">
                         <img class="img--edge-fade" src="./public/images/story-6.jpg" />
                         <div class="img-text txt__body--lg txt__col--primary">Vegas, 2024</div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="img--edge-fade" src="./public/images/story-7.jpg" />
-                        <div class="img-text txt__body--lg txt__col--primary">Breckenridge, 2024</div>
-                    </div>
-                    <div class="swiper-slide">
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-7.jpeg">
+                        <img class="img--edge-fade" src="./public/images/story-7.jpeg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Orem, 2024</div>
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-8.jpg">
                         <img class="img--edge-fade" src="./public/images/story-8.jpeg" />
-                        <div class="img-text txt__body--lg txt__col--primary">Prescott AZ, 2024</div>
-                    </div>
-                    <div class="swiper-slide">
+                        <div class="img-text txt__body--lg txt__col--primary">Prescott AZ, 2025</div>
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-9.jpg">
                         <img class="img--edge-fade" src="./public/images/story-9.jpg" />
                         <div class="img-text txt__body--lg txt__col--primary">Rollerblading in Orem, 2024</div>
-                    </div>
-                    <div class="swiper-slide">
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-10.jpg">
                         <img class="img--edge-fade" src="./public/images/story-10.jpg" />
                         <div class="img-text txt__body--lg txt__col--primary">Corn Maze, Orem, 2024</div>
-                    </div>
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-11.jpg">
+                        <img class="img--edge-fade" src="./public/images/story-11.jpg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Salt Lake City, 2025</div>
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-12.jpg">
+                        <img class="img--edge-fade" src="./public/images/story-12.jpg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Bees Game, 2025</div>
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-13.jpg">
+                        <img class="img--edge-fade" src="./public/images/story-13.jpg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Zion National Park, 2025</div>
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-14.jpg">
+                        <img class="img--edge-fade" src="./public/images/story-14.jpg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Rodizio, Orem 2025</div>
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-15.jpeg">
+                        <img class="img--edge-fade" src="./public/images/story-15.jpeg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Pensacola, FL 2025</div>
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-16.jpeg">
+                        <img class="img--edge-fade" src="./public/images/story-16.jpeg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Wind Caves, Logan, 2024</div>
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-17.jpeg">
+                        <img class="img--edge-fade" src="./public/images/story-17.jpeg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Mt. Olympus, 2024</div>
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-18.jpeg">
+                        <img class="img--edge-fade" src="./public/images/story-18.jpeg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Aspen Grove Annuel Cookout, 2023</div>
+                    </a>
+                    <a class="swiper-slide" href="./public/images/story-19.jpeg">
+                        <img class="img--edge-fade" src="./public/images/story-19.jpeg" />
+                        <div class="img-text txt__body--lg txt__col--primary">Pumpkin Patch, Orem, 2023</div>
+                    </a>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -1033,11 +1065,11 @@
             <div class="story__timeline">
                 <div class="story__item">
                     <div class="story__date">
-                        <div>March 25th, 2023</div>
+                        <div>March 29th, 2023</div>
                     </div>
                     <div class="story__content">
                         <div class="story__header">First Contact</div>
-                        <div class="story__text">We met on a dating app... how original!</div>
+                        <div class="story__text">We met on a dating app... how original! She waited 24 hours to respond to me...</div>
                     </div>
                 </div>
                 <div class="story__item">
@@ -1046,23 +1078,23 @@
                     </div>
                     <div class="story__content">
                         <div class="story__header">Our First Date</div>
-                        <div class="story__text">We had our first date at a conveyorbelt sushi restaurant! Yum!</div>
+                        <div class="story__text">We had our first date at a conveyorbelt sushi restaurant. Yum!</div>
                     </div>
                 </div>
 
                 <div class="story__item">
                     <div class="story__date">
-                        <div>May 1st, 2023</div>
+                        <div>July 30th, 2023</div>
                     </div>
                     <div class="story__content">
                         <div class="story__header">Our First Hike</div>
-                        <div class="story__text">We hiked Mt. whatever. It was grueling!</div>
+                        <div class="story__text">We hiked Mt. Olympus. It was grueling!</div>
                     </div>
                 </div>
 
                 <div class="story__item">
                     <div class="story__date">
-                        <div>May 1st, 2023</div>
+                        <div>October 1st, 2023</div>
                     </div>
                     <div class="story__content">
                         <div class="story__header">Our First Trip Together</div>
@@ -1072,13 +1104,56 @@
 
                 <div class="story__item">
                     <div class="story__date">
+                        <div>April 1st, 2024</div>
+                    </div>
+                    <div class="story__content">
+                        <div class="story__header">Our One Year Anniversary</div>
+                        <div class="story__text">We reenacted our first two dates! Sushi and bowling!</div>
+                    </div>
+                </div>
+
+                <div class="story__item">
+                    <div class="story__date">
+                        <div>August 1st, 2024</div>
+                    </div>
+                    <div class="story__content">
+                        <div class="story__header">Our First Apartment</div>
+                        <div class="story__text">We picked our first apartment together.</div>
+                    </div>
+                </div>
+
+                <div class="story__item">
+                    <div class="story__date">
+                        <div>April 1st, 2025</div>
+                    </div>
+                    <div class="story__content">
+                        <div class="story__header">Our Two Year Anniversary</div>
+                        <div class="story__text">We stuffed our gills at Rodizio Brazilian Steakhouse.</div>
+                    </div>
+                </div>
+
+                <div class="story__item">
+                    <div class="story__date">
+                        <div>May 17th, 2025</div>
+                    </div>
+                    <div class="story__content">
+                        <div class="story__header">Engaged!</div>
+                        <div class="story__text">We hiked to the highest point of Zion National Park, where I popped the question, and she said "oh no"</div>
+                    </div>
+                </div>
+
+                <!-- <div class="story__item">
+                    <div class="story__date">
                         <div>December 25th, 2023</div>
                     </div>
                     <div class="story__content">
                         <div class="story__header">Our First Christmas</div>
                         <div class="story__text">We didn't have a christmas tree, so we had a christmas wall instead.</div>
                     </div>
-                </div>
+                </div> -->
+
+
+
             </div>
             <!-- how we met -->
             <!-- first date -->
@@ -1092,9 +1167,9 @@
             <!-- everything... remove gallery -->
         </div>
         <img class="foliage foliage--1" src="/public/images/foliage1.svg" alt="">
-        <img class="foliage foliage--2" src="/public/images/foliage3.svg" alt="">
-        <img class="foliage foliage--3" src="/public/images/foliage2.svg" alt="">
-        <img class="foliage foliage--4" src="/public/images/foliage4.svg" alt="">
+        <img class="foliage foliage--2" src="/public/images/foliage4.svg" alt="">
+        <img class="foliage foliage--3" src="/public/images/foliage4.svg" alt="">
+        <img class="foliage foliage--4" src="/public/images/foliage1.svg" alt="">
     </section>
 
     <!-- LOGISTICS -->
@@ -1123,8 +1198,9 @@
                             </div>
                             <div class="cell booking">
                                 <div class="logistics__subheader">Booking</div>
-                                <div class="logistics__text">Book one of our reserved rooms using the link below:</div>
-                                <div class="logistics__text"><a href="" target="_blank">Reserve a Room</a></div>
+                                <div class="logistics__text">Book one of our reserved rooms by 3/7/26 using the link below:</div>
+                                <div class="logistics__text"><a href="https://group.doubletree.com/bbsgg8" target="_blank">Reserve a Room</a></div>
+                                <div class="logistics__text">Group Code: PNW</div>
                             </div>
                             <div class="cell shuttle">
                                 <div class="logistics__subheader">Shuttle Service</div>
@@ -1132,6 +1208,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div id="venue-view" class="view venue">
                         <div class="logistics__header">Women's Club of Claremont</div>
                         <div class="img">
@@ -1145,10 +1222,8 @@
                             <div class="cell about">
                                 <div class="logistics__subheader">About</div>
                                 <div class="logistics__text">
-                                    <!-- <p>The Womans Club of Claremont is located in the heart of Claremont Village, just across the street from the Double Tree Hotel.</p> -->
-                                    <p>The venue will host the entire event. The ceremony will be held in the back yard, and the reception will be held indoors in their dining hall
-                                    To get more info about the venue and to see more photos, visit their website:</p>
-                                    <a href="https://www.womansclubofclaremont.com/">Women's Club of Claremont</a>
+                                    <p>The venue will host the entire event. The ceremony will be held in the venue's outdoor space, with the reception to follow indoors.</p>
+                                    <a href="https://www.womansclubofclaremont.com/" target="_blank">Women's Club of Claremont</a>
                                 </div>
                             </div>
                         </div>
@@ -1165,20 +1240,13 @@
     <!-- REGISTRY -->
     <section class="registry section theme__cream--2">
         <div class="registry__wrapper section__wrapper">
-            <!-- <div class="registry__border"> -->
-                <div class="registry__content">
-                    <div class="section__header">Registry</div>
-                    <div class="registry__text">- gifts are not expected -</div>
-                    <div class="registry__text">Your presence is present enough, but for those who wish to contribute, we're skipping out of tradition and would love for you to help us create some new experiences instead.</div>
-                    <div class="registry__text">We are lucky enough to already have nearly everything we need for this new chapter together! However, for friends and family who have expressed an interest, we have created a gift registry for your convenience here</div>
-                </div>
-            <!-- </div> -->
-            <!-- gifts are not expected -->
-            <!-- Your presence is present enough, but for those who wish to contribute, we're skipping out of tradition and would love for you to help us create some new experiences instead -->
-            <!-- "We are lucky enough to already have nearly everything we need for this new chapter together! However, for friends and family who have expressed an interest, we have created a gift registry for your convenience here: (link)". -->
-            <!-- venmo account QR code -->
+            <div class="registry__content">
+                <div class="section__header">Registry</div>
+                <div class="registry__text">- gifts are not expected -</div>
+                <div class="registry__text">Your presence is present enough. For those who wish to provide a gift, a contribution towards our future home together would be sincerely appreciated.</div>
+            </div>
         </div>
-        <img class="foliage foliage--1" src="/public/images/foliage3.svg" alt="">
+        <img class="foliage foliage--1" src="/public/images/foliage4.svg" alt="">
         <img class="foliage foliage--2" src="/public/images/foliage1.svg" alt="">
     </section>
 
@@ -1281,7 +1349,7 @@
         // Example: Add pin for New York
         addMarkerByAddress('555 W Foothill Blvd, Claremont, CA 91711', "Double Tree Hotel", "fa-bed");
         addMarkerByAddress('2222 International Way, Ontario, CA 91761', "Ontario International Airport", "fa-plane");
-        addMarkerByAddress('343 W 12th St, Claremont, CA 91711', "Women's Club of Claremont", "fa-heart");
+        addMarkerByAddress('343 W 12th St, Claremont, CA 91711', "Women's Club of Claremont", "fa-champagne-glasses");
 
 
         const coordsBox = $("#coords-box");
