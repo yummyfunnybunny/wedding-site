@@ -921,7 +921,7 @@
                 <div class="input">
                     <div class="input__header">Plus One</div>
                     <label for="plus-one">
-                        <input id="plus-one-input" type="checkbox">
+                        <input id="plus-one-input" name="rsvp-guest" type="checkbox">
                         Yes I am bringing someone!
                     </label>
                 </div>
@@ -929,7 +929,7 @@
                 <!-- Plus One - Name -->
                 <div class="input" style="display: none;">
                     <div class="input__header">Plus One Name</div>
-                    <input id="plus-one-name-input" type="text" disabled>
+                    <input id="plus-one-name-input" name="rsvp-guest-name" type="text" disabled>
                 </div>
 
                 <!-- Plus One Dinner Choice -->
@@ -1291,7 +1291,8 @@
     </section>
 
     <!-- MODAL -->
-    <div id="modal" class="modal" style="display: none; opacity: 0;">
+     <!-- style="display: none; opacity: 0;" -->
+    <div id="modal" class="modal" >
         <div id="modal-overlay" class="modal__overlay"></div>
         <div class="modal__wrapper">
             <div class="modal__content">
@@ -1456,15 +1457,15 @@
             var modalMessage;
             switch(rsvpResponse) {
                 case 'yes':
-                    modalHeader = "Thank you";
+                    modalHeader = "Thank You!";
                     modalMessage = "We can't wait to see you on our big day!";
                     break;
                 case 'no':
-                    modalHeader = "Thank you";
+                    modalHeader = "Thank You!";
                     modalMessage = "We're sorry you won't be able to make it. We hope to see you some other time soon!";
                     break;
                 case 'maybe':
-                    modalHeader = "Thank you";
+                    modalHeader = "Thank You!";
                     modalMessage = "We hope you can make it! We'll follow up with you soon.";
                     break;
             }
