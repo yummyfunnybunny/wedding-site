@@ -678,7 +678,7 @@
     /* #region - Media Queries */
     @media screen and (max-width: 1024px) {
         :root {
-            font-size: 12px;
+            font-size: 14px;
         }
         /* CTA */
         .cta__content {
@@ -725,7 +725,7 @@
     }
     @media screen and (max-width: 768px) {
         :root {
-            font-size: 10px;
+            /* font-size: 10px; */
         }
         /* Navbar */
         .nav__links {
@@ -805,11 +805,11 @@
             width: 200px;
         }
     }
-    @media screen and (max-width: 600px) {
+    /* @media screen and (max-width: 600px) {
         :root {
             font-size: 10px;
         }
-    }
+    } */
     /* #endregion */
 </style>
 
@@ -1456,15 +1456,15 @@
             var modalMessage;
             switch(rsvpResponse) {
                 case 'yes':
-                    modalHeader = "Thank You!";
+                    modalHeader = "Thank You";
                     modalMessage = "We can't wait to see you on our big day!";
                     break;
                 case 'no':
-                    modalHeader = "Thank You!";
+                    modalHeader = "Thank You";
                     modalMessage = "We're sorry you won't be able to make it. We hope to see you some other time soon!";
                     break;
                 case 'maybe':
-                    modalHeader = "Thank You!";
+                    modalHeader = "Thank You";
                     modalMessage = "We hope you can make it! We'll follow up with you soon.";
                     break;
             }
