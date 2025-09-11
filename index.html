@@ -161,7 +161,9 @@
     .cta__wrapper {
         align-items: center;
     }
-    
+    .cta .section__header {
+        line-height: 0.75;
+    }
     .cta__img-container {
         grid-column: 1 / 5;
         display: flex;
@@ -178,6 +180,9 @@
         border: 4px solid var(--color-secondary);
         z-index: 10;
         background-color: var(--color-cream);
+    }
+    .cta .txt__display--md {
+        text-align: center;
     }
     .cta .foliage--1 {
         bottom: -100px;
@@ -737,6 +742,21 @@
             grid-row: 3;
         }
         /* Schedule */
+        .schedule__content {
+            grid-template-columns: repeat(12, 1fr);
+            row-gap: 4rem;
+        }
+        .schedule__item:nth-child(1),
+        .schedule__item:nth-child(2),
+        .schedule__item:nth-child(3) {
+            grid-column: span 4;
+        }
+        .schedule__item:nth-child(4) {
+            grid-column: 3 / 7;
+        }
+        .schedule__item:nth-child(5) {
+            grid-column: 7 / 11;
+        }
         .schedule .foliage--1 {
             width: 150px;
         }
@@ -810,7 +830,9 @@
     <section class="cta section theme__cream--2">
         <div class="cta__wrapper section__wrapper">
             <div class="cta__content">
-                <div class="section__header">Amanda & Jake</div>
+                <div class="section__header">Amanda<br>&<br>Jake</div>
+                <!-- <div class="section__header">&</div> -->
+                <!-- <div class="section__header">Jake</div> -->
                 <div class="txt__display--md">March 28th, 2026</div>
                 <div class="txt__display--sm txt--centered">343 West 12th Street,<br> Claremont, CA 91711</div>
             </div>
@@ -961,7 +983,7 @@
             <div class="section__header">Gallery</div>
             <div class="swiper gallery__swiper">
                 <div class="swiper-wrapper">
-                    <a class="swiper-slide" href="./public/images/story-1.jpg">
+                    <a class="swiper-slide" href="./public/images/story-1.jpeg">
                         <img class="img--edge-fade" src="./public/images/story-1.jpeg" />
                         <div class="img-text txt__body--lg txt__col--primary">Vegas, 2024</div>
                     </a>
@@ -969,11 +991,11 @@
                         <img class="img--edge-fade" src="./public/images/story-2.jpg" />
                         <div class="img-text txt__body--lg txt__col--primary">Breckenridge CO, 2025</div>
                     </a>
-                    <a class="swiper-slide" href="./public/images/story-3.jpg">
+                    <a class="swiper-slide" href="./public/images/story-3.jpeg">
                         <img class="img--edge-fade" src="./public/images/story-3.jpeg" />
                         <div class="img-text txt__body--lg txt__col--primary">Bryce Canyon, 2024</div>
                     </a>
-                    <a class="swiper-slide" href="./public/images/story-4.jpg">
+                    <a class="swiper-slide" href="./public/images/story-4.jpeg">
                         <img class="img--edge-fade" src="./public/images/story-4.jpeg" />
                         <div class="img-text txt__body--lg txt__col--primary">Luminaria, 2024</div>
                     </a>
@@ -989,7 +1011,7 @@
                         <img class="img--edge-fade" src="./public/images/story-7.jpeg" />
                         <div class="img-text txt__body--lg txt__col--primary">Orem, 2024</div>
                     </a>
-                    <a class="swiper-slide" href="./public/images/story-8.jpg">
+                    <a class="swiper-slide" href="./public/images/story-8.jpeg">
                         <img class="img--edge-fade" src="./public/images/story-8.jpeg" />
                         <div class="img-text txt__body--lg txt__col--primary">Prescott AZ, 2025</div>
                     </a>
