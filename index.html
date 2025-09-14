@@ -142,7 +142,7 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        /* background-image: url("public/images/hero-bg-1.jpeg"); */
+        background-image: url("public/images/hero-bg-1.jpeg");
         background-size: cover;
         background-position: center;
         filter: grayscale(25%);
@@ -863,13 +863,9 @@
     <section id="rsvp" class="rsvp section theme__primary">
         <div class="rsvp__wrapper section__wrapper">
             <div class="section__header">RSVP</div>
-            <!-- <div class="rsvp__content"> -->
                 <div class="rsvp__img">
-                    <div class="rsvp__border">
-                        <img class="img--edge-fade" src="./public/images/hero-img.jpeg" alt="">
-                    </div>
+                    <img class="img--edge-fade" src="./public/images/rsvp.jpeg" alt="">
                 </div>
-            <!-- </div> -->
 
             <form id="rsvp-form" class="rsvp__form form">
                 <!-- Name -->
@@ -1308,9 +1304,9 @@
     $(function() {
 
         // #region - Random Image
-        var chosenImage = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
-        var imgUrl = `public/images/hero-bg-${chosenImage}.jpeg`;
-        $(".hero__bg").css("backgroundImage", `url("${imgUrl}")`);
+        // var chosenImage = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
+        // var imgUrl = `public/images/hero-bg-${chosenImage}.jpeg`;
+        // $(".hero__bg").css("backgroundImage", `url("${imgUrl}")`);
 
         // 
 
