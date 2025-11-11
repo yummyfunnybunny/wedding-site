@@ -674,6 +674,7 @@
     .modal__message {
         font-family: var(--font-body);
         font-size: 2rem;
+        text-align: center;
     }
     /* #endregion */
     /* #region - Media Queries */
@@ -860,6 +861,7 @@
         <img class="foliage foliage--2" src="./public/images/foliage4.svg" alt="">
     </section>
 
+    <!-- RSVP -->
     <section id="rsvp" class="rsvp section theme__primary">
         <div class="rsvp__wrapper section__wrapper">
             <div class="section__header">RSVP</div>
@@ -867,7 +869,8 @@
                     <img class="img--edge-fade" src="./public/images/rsvp.jpeg" alt="">
                 </div>
 
-            <form id="rsvp-form" class="rsvp__form form">
+            <!--  -->
+            <form id="rsvp-form" class="rsvp__form form" action="https://formspree.io/f/xjkjvaep" method="POST">
                 <!-- Name -->
                 <div class="input">
                     <div class="input__header">Name</div>
@@ -948,6 +951,9 @@
                 <!-- FormSubmit -->
                  <input type="hidden" name="_captcha" value="false">
                  <input type="hidden" name="_template" value="table">
+
+                <!-- <input type="hidden" name="_captcha" value="false"> -->
+                <!-- <input type="hidden" name="_next" value="https://amandaandjake.org/thank-you.html"> -->
 
                 <!-- Submit -->
                 <button class="btn btn--xl btn--cream btn--outline" type="submit">Submit</button>
@@ -1450,10 +1456,11 @@
         }
 
         form.on("submit", (e) => {
-            e.preventDefault();
+            // console.log("submitting...");
+            // e.preventDefault();
             const formData = new FormData(form[0]);
             var formResponses = [...formData.entries()];
-            // console.log(formResponses);
+            console.log(formResponses);
             var rsvpResponse = formResponses[1][1];
             var modalHeader;
             var modalMessage;
@@ -1472,38 +1479,45 @@
                     break;
             }
 
-            // setTimeout(() => {
+            setTimeout(() => {
 
-            //     // Show thank you message
+                // Show thank you message
                 
-            //     showModal(modalHeader, modalMessage);
+                showModal(modalHeader, modalMessage);
                 
-            //     // Clear the form
+                // Clear the form
+                resetForm();
+
+            }, 500);
+
+            // TESTING
+            // fetch("https://formspree.io/f/xjkjvaep", {
+            //     method: "POST",
+            //     headers: {
+            //         "Accept": "application/json",
+            //         "Content-Type": "application/json"
+            //     },
+            //     body: formData
+            // })
+            // .then(response => {
+            //     if (response.ok) {
+
+            //         // Show thank you message
+            //         showModal(modalHeader, modalMessage);
+
+            //         // Clear the form
+            //         resetForm();
+
+            //     } else if(response.status === 402 || response.status === 429) {
+            //         showModal("We're sorry", "we've reached our submission limit for now. Please try again later or fill out our invitation and mail it back to us.");
+            //         resetForm();
+            //     }
+            // })
+            // .catch(error => {
+            //     console.error("Formsubmit error:", error);
+            //     showModal("Oops!", "We're having some technical difficulties! Please try again later or fill out our invitation and mail it back to us.");
             //     resetForm();
-
-            // }, 1000);
-
-            fetch("https://formsubmit.co/yummyfunnybunny13@gmail.com", {
-                method: "POST",
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) {
-
-                    // Show thank you message
-                    showModal(modalHeader, modalMessage);
-
-                    // Clear the form
-                    resetForm();
-
-                } else if(response.status === 402 || response.status === 429) {
-                    showModal("We're sorry", "we've reached our submission limit for now. Please try again later or fill out our invitation and mail it back to us.");
-                }
-            })
-            .catch(error => {
-                console.error("Formsubmit error:", error);
-                showModal("Oops!", "We're having some technical difficulties! Please try again later or fill out our invitation and mail it back to us.");
-            });
+            // });
 
         });
         // #endregion
