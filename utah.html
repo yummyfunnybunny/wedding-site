@@ -509,12 +509,12 @@
         max-width: 30rem;
         justify-self: center;
     }
-    .logistics__views .venue {
-        display: none;
-    }
+    /* .logistics__views .venue { */
+        /* display: none; */
+    /* } */
     .view__grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         grid-template-rows: auto;
         gap: 2rem;
         margin: 2rem;
@@ -899,7 +899,7 @@
                 </div>
 
                 <!-- Dinner Choice -->
-                <div class="input">
+                <!-- <div class="input">
                     <div class="input__header">Dinner Choice</div>
                     <select id="dinner-main-input" name="dinner-main" required>
                         <option value="">--Please choose an option--</option>
@@ -907,31 +907,31 @@
                         <option value="chicken">Chicken</option>
                         <option value="vegan">Vegan & Vegetarian</option>
                     </select>
-                </div>
+                </div> -->
 
                 <!-- Dietary Restrictions -->
-                <div class="input">
+                <!-- <div class="input">
                     <div class="input__header">Dietary Restrictions</div>
                     <input id="restrictions-main-input" name="rsvp-restrictions" type="text" />
-                </div>
+                </div> -->
 
                 <!-- Plus One -->
-                <div class="input">
+                <!-- <div class="input">
                     <div class="input__header">Plus One</div>
                     <label for="plus-one">
                         <input id="plus-one-input" name="rsvp-guest" type="checkbox">
                         Yes I am bringing someone!
                     </label>
-                </div>
+                </div> -->
 
                 <!-- Plus One - Name -->
-                <div class="input" style="display: none;">
+                <!-- <div class="input" style="display: none;">
                     <div class="input__header">Plus One Name</div>
                     <input id="plus-one-name-input" name="rsvp-guest-name" type="text" disabled>
-                </div>
+                </div> -->
 
                 <!-- Plus One Dinner Choice -->
-                <div class="input" style="display: none;">
+                <!-- <div class="input" style="display: none;">
                     <div class="input__header">Dinner Choice (Plus One)</div>
                     <select id="dinner-guest-input" name="dinner-guest" disabled>
                         <option value="">--Please choose an option--</option>
@@ -939,13 +939,13 @@
                         <option value="chicken">chicken</option>
                         <option value="vegan">Vegan & Vegetarian</option>
                     </select>
-                </div>
+                </div> -->
 
                 <!-- Plus One - Dietary Restrictions -->
-                <div class="input" style="display: none;">
+                <!-- <div class="input" style="display: none;">
                     <div class="input__header">Dietary Restrictions (Plus One)</div>
                     <input id="restrictions-guest-input" name="rsvp-restrictions-guest" type="text" disabled />
-                </div>
+                </div> -->
 
                 <!-- FormSubmit -->
                  <input type="hidden" name="_captcha" value="false">
@@ -1213,14 +1213,14 @@
     <!-- LOGISTICS -->
     <section id="logistics" class="logistics section">
         <div class="section__wrapper">
-            <div class="section__header">Logistics</div>
+            <div class="section__header">Venue Details</div>
             <div class="logistics__content">
-                <div class="logistics__buttons">   
-                    <button class="btn btn--xl btn--cream btn--outline views-btn btn--active" data-view ="hotel-view">Hotel</button>
-                    <button class="btn btn--xl btn--cream btn--outline views-btn" data-view ="venue-view">Venue</button>
-                </div>
+                <!-- <div class="logistics__buttons">    -->
+                    <!-- <button class="btn btn--xl btn--cream btn--outline views-btn btn--active" data-view ="hotel-view">Hotel</button> -->
+                    <!-- <button class="btn btn--xl btn--cream btn--outline views-btn" data-view ="venue-view">Venue</button> -->
+                <!-- </div> -->
                 <div class="logistics__views">
-                    <div id="hotel-view" class="view hotel">
+                    <!-- <div id="hotel-view" class="view hotel">
                         <div class="logistics__header">Double Tree Hotel</div>
                         <div class="img">
                             <img class="img--edge-fade" src="./public/images/double-tree-hotel.jpg" alt="">
@@ -1245,31 +1245,31 @@
                                 <div class="logistics__text">There is a free shuttle service that will get you to and from the wedding venue</div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div id="venue-view" class="view venue">
-                        <div class="logistics__header">Women's Club of Claremont</div>
-                        <div class="img">
-                            <img class="img--edge-fade" src="./public/images/womens-club-of-claremont.jpg" alt="">
-                        </div>
+                        <div class="logistics__header">Halo Venue</div>
+                        <!-- <div class="img"> -->
+                            <!-- <img class="img--edge-fade" src="./public/images/womens-club-of-claremont.jpg" alt=""> -->
+                        <!-- </div> -->
                         <div class="view__grid">
                             <div class="cell address">
                                 <div class="logistics__subheader">Address</div>
-                                <div class="logistics__text">343 West 12th Street.<br>Claremont, Ca 91711</div>
+                                <div class="logistics__text">313 N State St.<br>Orem, UT 84057</div>
                             </div>
-                            <div class="cell about">
-                                <div class="logistics__subheader">About</div>
-                                <div class="logistics__text">
-                                    <p>The venue will host the entire event. The ceremony will be held in the venue's outdoor space, with the reception to follow indoors.</p>
-                                    <a href="https://www.womansclubofclaremont.com/" target="_blank">Women's Club of Claremont</a>
-                                </div>
-                            </div>
+                            <!-- <div class="cell about"> -->
+                                <!-- <div class="logistics__subheader">About</div> -->
+                                <!-- <div class="logistics__text"> -->
+                                    <!-- <p>The venue will host the entire event. The ceremony will be held in the venue's outdoor space, with the reception to follow indoors.</p> -->
+                                    <!-- <a href="https://www.womansclubofclaremont.com/" target="_blank">Women's Club of Claremont</a> -->
+                                <!-- </div> -->
+                            <!-- </div> -->
                         </div>
                     </div>
                     <!-- <div id="airport-view"></div> -->
                 </div>
                 <div id="map" class="logistics__map">
-                    <!-- <div id="coords-box">Lng: 0.00, Lat: 0.00</div> -->
+                    <div id="coords-box">Lng: 0.00, Lat: 0.00</div>
                 </div>
             </div>
         </div>
@@ -1314,7 +1314,7 @@
 
         // #region - countdown Timer
         const Luxon = luxon.DateTime;
-        const startTime = Luxon.fromObject({ year: 2026, month: 3, day: 28, hour: 15, minute: 30, second: 0 });
+        const startTime = Luxon.fromObject({ year: 2026, month: 4, day: 18, hour: 12, minute: 0, second: 0 });
         
         var days = $(".countdown__days");
         var hours = $(".countdown__hours");
@@ -1351,7 +1351,7 @@
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11', // other styles: light-v10, dark-v10, etc.
             // center: [-117.71919, 34.10560], // USA center
-            center: [-117.72122, 34.10682], // USA center
+            center: [-111.69815, 40.30256], // USA center
             zoom: 15
         });
 
@@ -1393,9 +1393,9 @@
         }
 
         // Example: Add pin for New York
-        addMarkerByAddress('555 W Foothill Blvd, Claremont, CA 91711', "Double Tree Hotel", "fa-bed");
-        addMarkerByAddress('2222 International Way, Ontario, CA 91761', "Ontario International Airport", "fa-plane");
-        addMarkerByAddress('343 W 12th St, Claremont, CA 91711', "Women's Club of Claremont", "fa-champagne-glasses");
+        addMarkerByAddress('313 N State St, Orem, UT 84057', "Halo Venue", "fa-champagne-glasses");
+        // addMarkerByAddress('2222 International Way, Ontario, CA 91761', "Ontario International Airport", "fa-plane");
+        // addMarkerByAddress('343 W 12th St, Claremont, CA 91711', "Women's Club of Claremont", "fa-champagne-glasses");
 
 
         const coordsBox = $("#coords-box");
@@ -1485,7 +1485,7 @@
 
             // }, 1000);
 
-            fetch("https://formsubmit.co/yummyfunnybunny13@gmail.com", {
+            fetch("https://formspree.io/f/mnjbkbld", {
                 method: "POST",
                 body: formData
             })
