@@ -79,7 +79,7 @@
     }
     .theme__cream--1 {
         background-color: var(--color-cream);
-        color: var(--color-primary);
+        color: var(--color-text--green);
     }
     .theme__cream--2 {
         background-color: var(--color-cream);
@@ -87,7 +87,7 @@
     }
     .theme__primary {
         background-color: var(--color-primary);
-        color: var(--color-cream);
+        color: var(--color-text--green);
     }
     .theme__secondary {
         background-color: var(--color-secondary);
@@ -96,11 +96,11 @@
     .foliage {
         position: absolute;
     }
-    .btn--active {
+    /* .btn--active {
         background-color: var(--btn-color);
         border-color: var(--btn-color);
         color: var(--color-primary);
-    }
+    } */
     /* #endregion */
     /* #region - Navbar */
     .nav {
@@ -203,9 +203,9 @@
     }
     /* #endregion */
     /* #region - Countdown */
-    .countdown {
-        background-color: var(--color-primary);
-    }
+    /* .countdown { */
+        /* background-color: var(--color-primary); */
+    /* } */
     .countdown__wrapper .section__header {
         color: var(--color-secondary-dark);
     }
@@ -1519,17 +1519,17 @@
         // #endregion
 
         // #region - Logistics
-        var viewsBtns = $(".views-btn");
-        $.each(viewsBtns, function(idx, btn) {
-            $(btn).on("click", function(e) {
-                $(".views-btn").removeClass("btn--active");
-                $(e.target).addClass("btn--active");
-                var view = $(e.target).data("view");
-                $(".logistics__views .view").css("display", "none");
-                $(`#${view}`).css("display", "block");
+        // var viewsBtns = $(".views-btn");
+        // $.each(viewsBtns, function(idx, btn) {
+        //     $(btn).on("click", function(e) {
+        //         $(".views-btn").removeClass("btn--active");
+        //         $(e.target).addClass("btn--active");
+        //         var view = $(e.target).data("view");
+        //         $(".logistics__views .view").css("display", "none");
+        //         $(`#${view}`).css("display", "block");
 
-            });
-        });
+        //     });
+        // });
         
         // #endregion
     

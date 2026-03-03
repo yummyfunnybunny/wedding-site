@@ -1,9 +1,7 @@
 :root {
     /* main colors */
-    --color-primary: #384436;
-    /* --color-primary-transparant: rgba(174, 200, 164, 0.85); */
-    /* --color-primary-dark: hsl(103, 25%, 35%); */
-    /* --color-primary-dark-transparant: rgba(80, 112, 67, 0.85); */
+    /* --color-primary: #384436; */
+    --color-primary: #E2EDD9;
 
     --color-secondary: #9d6331;
     /* --color-secondary-dark: hsl(32, 100%, 35%); */
@@ -21,6 +19,7 @@
     /* text */
     --color__text--normal: black;
     --color__text--invert: white;
+    --color__text--green: #4F6443;
 
     /* backgrounds */
 
