@@ -1413,41 +1413,41 @@
         var rsvpYesInput            = $("#rsvp-yes-input");
         var rsvpNoInput             = $("#rsvp-no-input");
         var rsvpMaybeInput          = $("#rsvp-maybe-input");
-        var plusOneInput            = $("#plus-one-input");
-        var plusOneNameInput        = $("#plus-one-name-input");
-        var dinnerMainInput         = $("#dinner-main-input");
-        var dinnerGuestInput        = $("#dinner-guest-input");
-        var restrictionsMainInput   = $("#restrictions-main-input");
-        var restrictionsGuestInput  = $("#restrictions-guest-input");
+        // var plusOneInput            = $("#plus-one-input");
+        // var plusOneNameInput        = $("#plus-one-name-input");
+        // var dinnerMainInput         = $("#dinner-main-input");
+        // var dinnerGuestInput        = $("#dinner-guest-input");
+        // var restrictionsMainInput   = $("#restrictions-main-input");
+        // var restrictionsGuestInput  = $("#restrictions-guest-input");
 
-        plusOneInput.on("change", () => {
-            if (plusOneInput.is(":checked")) {
-                plusOneNameInput.parent().css("display", "block");
-                plusOneNameInput.prop("disabled", false);
-                dinnerGuestInput.parent().css('display', "block");
-                dinnerGuestInput.prop('disabled', false);
-                restrictionsGuestInput.parent().css('display', "block");
-                restrictionsGuestInput.prop('disabled', false);
-            } else {
-                plusOneNameInput.parent().css("display", "none");
-                plusOneNameInput.prop("disabled", true);
-                dinnerGuestInput.parent().css('display', "none");
-                dinnerGuestInput.prop('disabled', true);
-                restrictionsGuestInput.parent().css('display', "none");
-                restrictionsGuestInput.prop('disabled', true);
+        // plusOneInput.on("change", () => {
+        //     if (plusOneInput.is(":checked")) {
+        //         plusOneNameInput.parent().css("display", "block");
+        //         plusOneNameInput.prop("disabled", false);
+        //         dinnerGuestInput.parent().css('display', "block");
+        //         dinnerGuestInput.prop('disabled', false);
+        //         restrictionsGuestInput.parent().css('display', "block");
+        //         restrictionsGuestInput.prop('disabled', false);
+        //     } else {
+        //         plusOneNameInput.parent().css("display", "none");
+        //         plusOneNameInput.prop("disabled", true);
+        //         dinnerGuestInput.parent().css('display', "none");
+        //         dinnerGuestInput.prop('disabled', true);
+        //         restrictionsGuestInput.parent().css('display', "none");
+        //         restrictionsGuestInput.prop('disabled', true);
 
-            }
-        });
+        //     }
+        // });
 
         var resetForm = function() {
             // Clear the form
             form[0].reset();
-            plusOneNameInput.parent().css("display", "none");
-            plusOneNameInput.prop("disabled", true);
-            dinnerGuestInput.parent().css('display', "none");
-            dinnerGuestInput.prop('disabled', true);
-            restrictionsGuestInput.parent().css('display', "none");
-            restrictionsGuestInput.prop('disabled', true);
+            // plusOneNameInput.parent().css("display", "none");
+            // plusOneNameInput.prop("disabled", true);
+            // dinnerGuestInput.parent().css('display', "none");
+            // dinnerGuestInput.prop('disabled', true);
+            // restrictionsGuestInput.parent().css('display', "none");
+            // restrictionsGuestInput.prop('disabled', true);
 
         }
 
