@@ -1,7 +1,7 @@
 :root {
     /* main colors */
-    /* --color-primary: #384436; */
-    --color-primary: #E2EDD9;
+    --color-primary: #384436;
+    /* --color-primary: #E2EDD9; */
 
     --color-secondary: #9d6331;
     /* --color-secondary-dark: hsl(32, 100%, 35%); */
@@ -19,7 +19,7 @@
     /* text */
     --color__text--normal: black;
     --color__text--invert: white;
-    --color__text--green: #4F6443;
+    /* --color__text--green: #4F6443; */
 
     /* backgrounds */
 
